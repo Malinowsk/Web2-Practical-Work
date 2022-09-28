@@ -1,0 +1,14 @@
+*Solo puede entrar a la solapa de administrador el usuario admin
+*boton detalle en categorias para listar los personajes de esa categoria
+*"Importante: En cada ítem siempre se debe mostrar el nombre de la categoría a la que pertenece."
+Esto significa que haga un join de personaje con raza para mostrar el nombre de la raza ?
+De ser asi, el metodo con la sentencia join en que model de tabla va?
+*Preguntar tema logeo , boton logearse , boton salir del logeo . 
+* Preguntar que quiere indicar con esto : (Noticias/Productos/…)
+* De que manera mas conveniente se puede hacer el editar de item y categoria
+* consultar tema Smarty
+* los archivos de template que son usados para vista (frontend) deberian pasar a ser metodos de la clase vista
+* 1 controller y 1 vist estaria bien por el momento?
+* Si esta bien hacer switch dentro de los twitch .
+* Si esta bien hacer en determinadas ocaciones el control de null en la variabla paramt fuera de la clase controller?
+
