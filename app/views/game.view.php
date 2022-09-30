@@ -40,20 +40,8 @@ class GameView {
     }
 
     function showAdmRace($races) {
-        include './templates/header.php';   
-    
-        include './templates/form_alta.php';  
-
-        echo '<ul class="list-group">';
-        foreach ($races as $race) {
-           echo "<li class='list-group-item d-flex justify-content-between align-items-center'>
-                    <span> Nombre: <b>$race->nombre</b> - faccion: <b>$race->faccion</b> </span>
-                    <a href='admin/race/delete/$race->id_raza' type='button' class='btn btn-danger ml-auto'>Borrar</a>
-                </li>";
-        }
-        echo "</ul>";
-    
-        include './templates/footer.php';
+        $this->smarty->assign("races", $races);
+        $this->smarty->display('./templates/showAdmRace.tpl');
     }
 
 }

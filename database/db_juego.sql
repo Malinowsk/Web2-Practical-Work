@@ -2,11 +2,20 @@
 -- version 5.2.0
 -- https://www.phpmyadmin.net/
 --
--- Servidor: localhost
--- Tiempo de generación: 25-09-2022 a las 17:41:32
+-- Servidor: 127.0.0.1
+-- Tiempo de generación: 30-09-2022 a las 18:23:55
 -- Versión del servidor: 10.4.24-MariaDB
--- Versión de PHP: 7.4.29
+-- Versión de PHP: 8.1.6
 
+SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+START TRANSACTION;
+SET time_zone = "+00:00";
+
+
+/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
+/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
+/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
+/*!40101 SET NAMES utf8mb4 */;
 
 --
 -- Base de datos: `db_juego`
@@ -15,65 +24,69 @@
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `Personaje`
+-- Estructura de tabla para la tabla `personaje`
 --
 
-CREATE TABLE `Personaje` (
+CREATE TABLE `personaje` (
   `id_personaje` int(11) NOT NULL,
-  `nombre` varchar(20) NOT NULL,
-  `apellido` varchar(20) NOT NULL,
-  `clase` varchar(20) NOT NULL,
+  `nombre` varchar(40) NOT NULL,
+  `apellido` varchar(40) NOT NULL,
+  `clase` varchar(40) NOT NULL,
   `id_raza` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Volcado de datos para la tabla `Personaje`
+-- Volcado de datos para la tabla `personaje`
 --
 
-INSERT INTO `Personaje` (`id_personaje`, `nombre`, `apellido`, `clase`, `id_raza`) VALUES
-(1, 'Zeus', 'Barbablanca', 'Guerrero', 1),
-(10, 'Thrall', 'eol', 'Chaman', 2),
-(11, 'Ilidan', 'Verpestinad', 'Mago', 1),
-(12, 'Voljin', 'VB', 'Brujo', 5);
+INSERT INTO `personaje` (`id_personaje`, `nombre`, `apellido`, `clase`, `id_raza`) VALUES
+(1, 'Muradin', 'Barbabronce', 'Guerrero', 1),
+(2, 'Modimus', 'Anvilmar', 'Mago', 1),
+(3, 'Thrall', 'Goel', 'Chamán', 2),
+(4, 'Grom', 'Hellscream', 'Guerrero', 2),
+(5, 'Arthas', 'Menethil', 'Paladin', 4);
 
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `Raza`
+-- Estructura de tabla para la tabla `raza`
 --
 
-CREATE TABLE `Raza` (
+CREATE TABLE `raza` (
   `id_raza` int(11) NOT NULL,
-  `nombre` varchar(20) NOT NULL,
-  `faccion` varchar(20) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+  `nombre` varchar(40) NOT NULL,
+  `faccion` varchar(40) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Volcado de datos para la tabla `Raza`
+-- Volcado de datos para la tabla `raza`
 --
 
-INSERT INTO `Raza` (`id_raza`, `nombre`, `faccion`) VALUES
+INSERT INTO `raza` (`id_raza`, `nombre`, `faccion`) VALUES
 (1, 'Enano', 'Alianza'),
 (2, 'Orco', 'Horda'),
-(3, 'Humano', 'Alianza'),
-(4, 'Tauren', 'Horda'),
-(5, 'Troll', 'Horda');
+(3, 'Muerto Viviente', 'Horda'),
+(4, 'Humano', 'Alianza'),
+(5, 'Troll', 'Horda'),
+(6, 'Elfo', 'Alianza'),
+(7, 'Tauren', 'Horda'),
+(8, 'Drainer', 'Alianza');
 
 --
 -- Índices para tablas volcadas
 --
 
 --
--- Indices de la tabla `Personaje`
+-- Indices de la tabla `personaje`
 --
-ALTER TABLE `Personaje`
+ALTER TABLE `personaje`
   ADD PRIMARY KEY (`id_personaje`),
-  ADD KEY `FK_Personaje_Raza` (`id_raza`);
+  ADD KEY `FK_PERSONAJE_RAZA` (`id_raza`);
 
 --
--- Indices de la tabla `Raza`
+-- Indices de la tabla `raza`
 --
-ALTER TABLE `Raza`
+ALTER TABLE `raza`
   ADD PRIMARY KEY (`id_raza`);
 
 --
@@ -81,26 +94,26 @@ ALTER TABLE `Raza`
 --
 
 --
--- AUTO_INCREMENT de la tabla `Personaje`
+-- AUTO_INCREMENT de la tabla `personaje`
 --
-ALTER TABLE `Personaje`
-  MODIFY `id_personaje` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
+ALTER TABLE `personaje`
+  MODIFY `id_personaje` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
 
 --
--- AUTO_INCREMENT de la tabla `Raza`
+-- AUTO_INCREMENT de la tabla `raza`
 --
-ALTER TABLE `Raza`
-  MODIFY `id_raza` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+ALTER TABLE `raza`
+  MODIFY `id_raza` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 
 --
 -- Restricciones para tablas volcadas
 --
 
 --
--- Filtros para la tabla `Personaje`
+-- Filtros para la tabla `personaje`
 --
-ALTER TABLE `Personaje`
-  ADD CONSTRAINT `FK_Personaje_Raza` FOREIGN KEY (`id_raza`) REFERENCES `Raza` (`id_raza`) ON UPDATE CASCADE;
+ALTER TABLE `personaje`
+  ADD CONSTRAINT `FK_PERSONAJE_RAZA` FOREIGN KEY (`id_raza`) REFERENCES `raza` (`id_raza`);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
