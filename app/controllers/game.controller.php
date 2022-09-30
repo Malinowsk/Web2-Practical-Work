@@ -21,15 +21,25 @@ class GameController {
     //showPersonage
     public function showPersonage($id=null) {
         $personage = $this->personage_model->getAll();
-        $race = $this->race_model->getAll();
+        //$race = $this->race_model->getAll();
         if (!isset($id))
-            $this->view->showPersonage($race,$personage);
+            $this->view->showPersonage($personage);
         else{ 
             $detalle = $this->personage_model->getPersonaje($id);
-            $this->view->showPersonage($race,$personage,$detalle);
+            $this->view->showPersonage($personage,$detalle);
         }
     }
 
+    public function showRace($id=null) {
+        $race = $this->race_model->getAll();
+        if (!isset($id)){
+            $this->view->showRace($race);}
+        else{
+            $personages_race = $this->personage_model->getOneRacePersonages($id);
+            $this->view->showRace($race,$personages_race);
+        }
+
+    }
 
     public function showAdmPersonage() {
         $personage = $this->personage_model->getAll();
@@ -42,6 +52,8 @@ class GameController {
         $lastname = $_POST['lastname'];
         $class = $_POST['class'];
         $race = $_POST['race'];
+        echo $name;
+        echo $race;
 
         $id = $this->personage_model->insert($name, $lastname, $class, $race);
 
@@ -53,10 +65,7 @@ class GameController {
         header("Location: " . BASE_URL . "admin/personage");
     }
 
-    public function showRace() {
-        $race = $this->race_model->getAll();
-        $this->view->showRace($race);
-    }
+    
 
     public function showAdmRace() {
         $race = $this->race_model->getAll();

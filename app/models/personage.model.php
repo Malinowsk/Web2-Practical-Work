@@ -13,7 +13,7 @@ class PersonageModel {
      */
     public function getAll() {
 
-        $query = $this->db->prepare("SELECT * FROM Personaje");
+        $query = $this->db->prepare("SELECT p.id_personaje, p.nombre as nombre_p, p.apellido, p.clase, p.id_raza, r.nombre as nombre_r , r.faccion from Personaje p join Raza r on r.id_raza = p.id_raza");
         //select * from Personaje join Raza on Personaje.id_raza = Raza.id_raza;
         $query->execute();
 
@@ -25,7 +25,7 @@ class PersonageModel {
 
     public function getPersonaje($id){
         
-        $query = $this->db->prepare("SELECT * FROM Personaje WHERE id_personaje=?");
+        $query = $this->db->prepare("SELECT p.id_personaje, p.nombre as nombre_p, p.apellido, p.clase, p.id_raza, r.nombre as nombre_r , r.faccion from Personaje p join Raza r on r.id_raza = p.id_raza WHERE id_personaje=?");
         //select * from Personaje join Raza on Personaje.id_raza = Raza.id_raza;
         $query->execute([$id]);
 
@@ -33,6 +33,18 @@ class PersonageModel {
         $personage = $query->fetchAll(PDO::FETCH_OBJ); // devuelve un arreglo de objetos
         
         return $personage;
+    }
+
+    public function getOneRacePersonages($id){
+        
+        $query = $this->db->prepare("SELECT p.id_personaje, p.nombre as nombre_p, p.apellido, p.clase, p.id_raza, r.nombre as nombre_r , r.faccion from Personaje p join Raza r on r.id_raza = p.id_raza WHERE p.id_raza=?");
+        //select * from Personaje join Raza on Personaje.id_raza = Raza.id_raza;
+        $query->execute([$id]);
+
+        // 3. obtengo los resultados
+        $personages = $query->fetchAll(PDO::FETCH_OBJ); // devuelve un arreglo de objetos
+        
+        return $personages;
     }
 
     /**

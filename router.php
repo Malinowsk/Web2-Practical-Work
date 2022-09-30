@@ -31,7 +31,10 @@ switch ($params[0]) {
                         $GameController->showPersonage($params[2]);
                     break;
                 case 'race':
-                    $GameController->showRace();
+                    if (empty($params[2]))
+                        $GameController->showRace();
+                    else
+                        $GameController->showRace($params[2]);
                     break;
                 default:
                     echo('404 Page not found');
