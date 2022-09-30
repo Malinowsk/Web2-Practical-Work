@@ -23,6 +23,18 @@ class PersonageModel {
         return $personage;
     }
 
+    public function getPersonaje($id){
+        
+        $query = $this->db->prepare("SELECT * FROM Personaje WHERE id_personaje=?");
+        //select * from Personaje join Raza on Personaje.id_raza = Raza.id_raza;
+        $query->execute([$id]);
+
+        // 3. obtengo los resultados
+        $personage = $query->fetchAll(PDO::FETCH_OBJ); // devuelve un arreglo de objetos
+        
+        return $personage;
+    }
+
     /**
      * Inserta un personaje en la base de datos.
      */

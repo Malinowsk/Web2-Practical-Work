@@ -1,13 +1,20 @@
 <?php
+require_once "./libs/smarty-4.2.1/libs/Smarty.class.php";
 
 class GameView {
+    private $smarty;
 
-    function showHome(){
-        include './templates/header.php';
-        include './templates/footer.php';
+    function __construct(){
+        $this->smarty= new Smarty();
     }
 
-    function showPersonage($races,$personages) {
+    function showHome(){
+        $this->smarty->assign("BASE_URL", BASE_URL);
+        $this->smarty->display('./templates/header.tpl');
+        $this->smarty->display('./templates/footer.tpl');
+    }
+
+    function showPersonag($races,$personages) {
         include './templates/header.php';   
     
         echo "<h1>Lista de Personaje</h1>";
@@ -21,6 +28,16 @@ class GameView {
     
         include './templates/footer.php';
     }
+
+    function showPersonage($races,$personages,$detalle=null) {
+        
+        $this->smarty->assign("personages", $personages);
+        $this->smarty->assign("races", $races);
+        $this->smarty->assign("detalle", $detalle);
+
+        $this->smarty->display('./templates/showPersonaje.tpl');
+    }
+
 
     function showAdmPersonage($races,$personages) {
         include './templates/header.php';   

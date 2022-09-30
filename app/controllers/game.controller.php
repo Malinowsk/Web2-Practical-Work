@@ -19,10 +19,15 @@ class GameController {
     }
 
     //showPersonage
-    public function showPersonage() {
+    public function showPersonage($id=null) {
         $personage = $this->personage_model->getAll();
         $race = $this->race_model->getAll();
-        $this->view->showPersonage($race,$personage);
+        if (!isset($id))
+            $this->view->showPersonage($race,$personage);
+        else{ 
+            $detalle = $this->personage_model->getPersonaje($id);
+            $this->view->showPersonage($race,$personage,$detalle);
+        }
     }
 
 

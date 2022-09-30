@@ -3,7 +3,7 @@ require_once './app/controllers/game.controller.php';
 
 define('BASE_URL', '//'.$_SERVER['SERVER_NAME'] . ':' . $_SERVER['SERVER_PORT'] . dirname($_SERVER['PHP_SELF']).'/');
 
-$action = 'home'; // acción por defecto
+$action = 'public'; // acción por defecto
 if (!empty($_GET['action'])) {
     $action = $_GET['action'];
 }
@@ -17,9 +17,6 @@ $GameController = new GameController();
 
 // tabla de ruteo
 switch ($params[0]) {
-    case 'home':
-        $GameController->ShowHome();
-        break;
     case 'public':
         if(empty($params[1])){
             $GameController->ShowHome();
@@ -28,7 +25,10 @@ switch ($params[0]) {
         else{
             switch ($params[1]){
                 case 'personage':
-                    $GameController->showPersonage();
+                    if (empty($params[2]))
+                        $GameController->showPersonage();
+                    else
+                        $GameController->showPersonage($params[2]);
                     break;
                 case 'race':
                     $GameController->showRace();
