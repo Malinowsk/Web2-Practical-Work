@@ -3,25 +3,25 @@
 <h2>Lista de Personaje</h2>
 <div class="table-responsive ">
 
-    <table class="table container text-center">
-        <thead class="table-dark">
+    <table class="table container text-center border border-black">
+        <thead class="table-dark border border-black">
             <tr>
-                <th >Nombre</th>
-                <th >Apellido</th>
-                <th >Clase</th>
-                <th >Raza</th>
-                <th >Accion</th>
+                <th class="border border-black">Nombre</th>
+                <th class="border border-black">Apellido</th>
+                <th class="border border-black">Clase</th>
+                <th class="border border-black">Raza</th>
+                <th class="border border-black">Accion</th>
             </tr>
         </thead>
         <tbody>
 
             {foreach $personages as $personage} 
                 <tr>
-                    <td>{$personage->nombre_p}</td> 
-                    <td>{$personage->apellido}</td>
-                    <td>{$personage->clase}</td>
-                    <td>{$personage->nombre_r}</td> 
-                    <td><a href='public/personage/{$personage->id_personaje}' type='button' class='btn btn-primary ml-auto'>Detalle</a></td>
+                    <td class="border border-black">{$personage->nombre_p}</td> 
+                    <td class="border border-black">{$personage->apellido}</td>
+                    <td class="border border-black">{$personage->clase}</td>
+                    <td class="border border-black">{$personage->nombre_r}</td> 
+                    <td class="border border-black"><a href='public/personage/{$personage->id_personaje}' type='button' class='btn btn-primary ml-auto'>Detalle</a></td>
                 </tr>
             {/foreach} 
         </tbody>

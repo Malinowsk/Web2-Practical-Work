@@ -47,7 +47,7 @@ class GameController {
         $this->view->showAdmPersonage($race,$personage);
     }
 
-    function addPersonage() {
+    public function addPersonage() {
         $name = $_POST['name'];
         $lastname = $_POST['lastname'];
         $class = $_POST['class'];
@@ -58,7 +58,7 @@ class GameController {
         header("Location: " . BASE_URL . "admin/personage"); 
     }
    
-    function deletePersonage($id) {
+    public function deletePersonage($id) {
         $this->personage_model->delete($id);
         header("Location: " . BASE_URL . "admin/personage");
     }
@@ -69,7 +69,7 @@ class GameController {
     }
 
      //addRace
-     function addRace() {
+     public function addRace() {
         $name = $_POST['name'];
         $faccion = $_POST['faccion'];
 
@@ -78,7 +78,7 @@ class GameController {
         header("Location: " . BASE_URL . "admin/race"); 
     }
 
-    function deleteRace($id) {
+    public function deleteRace($id) {
         $personages = $this->personage_model->getOneRacePersonages($id);
         if (empty($personages)){
             $this->delete($id);
@@ -93,13 +93,13 @@ class GameController {
         header("Location: " . BASE_URL . "admin/race");
     }
     
-    function preEditPersonage($id) {
+    public function preEditPersonage($id) {
         $edit = $this->personage_model->getPersonage($id);
         $race = $this->race_model->getAll();
         $this->view->editAdmPersonage($edit,$race);
     }
 
-    function editPersonage($id) {
+    public function editPersonage($id) {
         $name = $_POST['name'];
         $lastname = $_POST['lastname'];
         $class = $_POST['class'];
@@ -110,13 +110,13 @@ class GameController {
         header("Location: " . BASE_URL . "admin/personage"); 
     }
 
-    function preEditRace($id) {
+    public function preEditRace($id) {
         $edit = $this->race_model->getRace($id);
 
         $this->view->editAdmRace($edit);
     }
 
-    function editRace($id) {
+    public function editRace($id) {
         $name = $_POST['name'];
         $faccion = $_POST['faccion'];
         

@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 4.2.1, created on 2022-10-02 04:18:47
+/* Smarty version 4.2.1, created on 2022-10-02 19:18:15
   from 'C:\xampp\htdocs\main\TPE-WEB2\templates\form_personage.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '4.2.1',
-  'unifunc' => 'content_6338f5075e36f0_60616836',
+  'unifunc' => 'content_6339c7d7b4eb20_66156599',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'ab2eb50d075e2a0d04e1df3ba75f0cdcc08a6aa4' => 
     array (
       0 => 'C:\\xampp\\htdocs\\main\\TPE-WEB2\\templates\\form_personage.tpl',
-      1 => 1664677042,
+      1 => 1664731093,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_6338f5075e36f0_60616836 (Smarty_Internal_Template $_smarty_tpl) {
+function content_6339c7d7b4eb20_66156599 (Smarty_Internal_Template $_smarty_tpl) {
 ?><form action= <?php if ((isset($_smarty_tpl->tpl_vars['edit']->value))) {?> "admin/personage/edit/confirm/<?php echo $_smarty_tpl->tpl_vars['edit']->value[0]->id_personaje;?>
 " <?php } else { ?> "admin/personage/add" <?php }?> method='POST' class='my-4'>
     
@@ -71,7 +71,11 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
             </div>
         </div>
     </div>
+    
+    <button type="submit" class="btn btn-warning mt-3"><?php if ((isset($_smarty_tpl->tpl_vars['edit']->value))) {?> Aplicar <?php } else { ?> Guardar <?php }?></button>
+    <?php if ((isset($_smarty_tpl->tpl_vars['edit']->value))) {?>
+        <button type="button" class="btn btn-warning mt-3 ms-3"> <a href='admin/personage' class="text-decoration-none text-dark">Cancelar</a> </button>
+    <?php }?>
 
-    <button type="submit" class="btn btn-success mt-3"><?php if ((isset($_smarty_tpl->tpl_vars['edit']->value))) {?> Aplicar <?php } else { ?> Guardar <?php }?></button>
 </form><?php }
 }

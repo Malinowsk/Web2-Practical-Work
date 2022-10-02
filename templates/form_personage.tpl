@@ -35,6 +35,10 @@
             </div>
         </div>
     </div>
+    
+    <button type="submit" class="btn btn-warning mt-3">{if isset($edit) } Aplicar {else} Guardar {/if}</button>
+    {if isset($edit) }
+        <button type="button" class="btn btn-warning mt-3 ms-3"> <a href='admin/personage' class="text-decoration-none text-dark">Cancelar</a> </button>
+    {/if}
 
-    <button type="submit" class="btn btn-success mt-3">{if isset($edit) } Aplicar {else} Guardar {/if}</button>
 </form>

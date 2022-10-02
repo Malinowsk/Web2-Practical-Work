@@ -5,11 +5,11 @@
 <table class="table container text-center border border-black">
     <thead class="table-dark border border-black">
         <tr>
-            <th class="col-2">Nombre</th>
-            <th class="col-2">Apellido</th>
-            <th class="col-2">Clase</th>
-            <th class="col-2">Raza</th>
-            <th class="col-2">Acciones</th>
+            <th class="col-2 border border-black">Nombre</th>
+            <th class="col-2 border border-black">Apellido</th>
+            <th class="col-2 border border-black">Clase</th>
+            <th class="col-2 border border-black">Raza</th>
+            <th class="col-2 border border-black">Acciones</th>
         </tr>
     </thead>
     <tbody> 

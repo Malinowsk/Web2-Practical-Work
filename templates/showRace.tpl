@@ -1,6 +1,5 @@
 {include file="header.tpl"} 
      
-
 <div class="row g-2">
     <div class="col-sm-6">
 
@@ -8,21 +7,21 @@
 
         <div class="table-responsive ">
 
-            <table class="table container text-center">
+            <table class="table container text-center border border-black">
                 <thead  class="table-dark">
                     <tr>
-                        <th scope="col">Nombre</th>
-                        <th scope="col">Faccion</th>
-                        <th scope="col">Accion</th>
+                        <th class="border border-black" scope="col">Nombre</th>
+                        <th class="border border-black" scope="col">Faccion</th>
+                        <th class="border border-black" scope="col">Accion</th>
                     </tr>
                 </thead>
                 <tbody>
 
                     {foreach $races as $race} 
-                        <tr>
-                            <td>{$race->nombre}</td> 
-                            <td>{$race->faccion}</td>
-                            <td><a href='public/race/{$race->id_raza}' type='button' class='btn btn-primary ml-auto'>Detalle</a></td>
+                        <tr class="border border-black">
+                            <td class="border border-black">{$race->nombre}</td> 
+                            <td class="border border-black">{$race->faccion}</td>
+                            <td class="border border-black"><a href='public/race/{$race->id_raza}' type='button' class='btn btn-primary ml-auto'>Detalle</a></td>
                         </tr>
                     {/foreach} 
                 </tbody>
@@ -30,37 +29,39 @@
         </div>
     </div>
 
-
-    {if $details != null}
-        <div class="col-sm-6">
+    <div class="col-sm-6">
+        {if $details != null}
             <h2>Lista de Personaje de la raza : {$details[0]->nombre_r}</h2>
             
             <div class="table-responsive ">
 
-                <table class="table container text-center">
-                    <thead  class="table-dark">
+                <table class="table container text-center border border-black">
+                    <thead  class="table-dark border border-black">
                         <tr>
-                            <th scope="col">Nombre</th>
-                            <th scope="col">Apellido</th>
-                            <th scope="col">Clase</th>
-                            <th scope="col">Raza</th>
+                            <th class="border border-black" scope="col">Nombre</th>
+                            <th class="border border-black" scope="col">Apellido</th>
+                            <th class="border border-black" scope="col">Clase</th>
+                            <th class="border border-black" scope="col">Raza</th>
                         </tr>
                     </thead>
                     <tbody>
 
                         {foreach $details as $detail} 
                             <tr>
-                                <td>{$detail->nombre_p}</td> 
-                                <td>{$detail->apellido}</td>
-                                <td>{$detail->clase}</td>
-                                <td>{$detail->nombre_r}</td> 
+                                <td class="border border-black">{$detail->nombre_p}</td> 
+                                <td class="border border-black">{$detail->apellido}</td>
+                                <td class="border border-black">{$detail->clase}</td>
+                                <td class="border border-black">{$detail->nombre_r}</td> 
                             </tr>
                         {/foreach} 
                     </tbody>
                 </table>
             </div>
-        </div>
-    {/if}
+        
+        {else}
+            <h2>No existe cargado personajes de esa raza</h2>
+        {/if}
+    </div>
 </div>
 
     

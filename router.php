@@ -98,7 +98,6 @@ switch ($params[0]) {
                                         $GameController->deleteRace($id);
                                     }
                                 }
-                                
                                 break;
                             case 'edit':
                                 if(!empty($params[3])){

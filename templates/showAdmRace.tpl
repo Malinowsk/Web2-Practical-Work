@@ -6,12 +6,12 @@
 <table class="table container text-center border border-black">
     <thead class="table-dark border border-black">
         <tr>
-            <th class="col-4">Nombre</th>
-            <th class="col-4">Faccion</th>
-            <th class="col-2">Accion</th>
+            <th class="col-4 border border-black">Nombre</th>
+            <th class="col-4 border border-black">Faccion</th>
+            <th class="col-2 border border-black">Accion</th>
         </tr>
     </thead>
-    <tbody> 
+    <tbody>
         {foreach $races as $race}
             <tr>
                 <td class = "border border-black fst-italic">{$race->nombre}</td> 
@@ -21,6 +21,5 @@
         {/foreach} 
     </tbody>
 </table>
-
 
 {include file="footer.tpl"}

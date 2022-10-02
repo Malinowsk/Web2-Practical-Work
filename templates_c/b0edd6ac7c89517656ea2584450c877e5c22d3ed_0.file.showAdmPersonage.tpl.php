@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 4.2.1, created on 2022-10-02 02:18:42
+/* Smarty version 4.2.1, created on 2022-10-02 21:59:47
   from 'C:\xampp\htdocs\main\TPE-WEB2\templates\showAdmPersonage.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '4.2.1',
-  'unifunc' => 'content_6338d8e2a8c779_52531070',
+  'unifunc' => 'content_6339edb3d934c9_32452077',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'b0edd6ac7c89517656ea2584450c877e5c22d3ed' => 
     array (
       0 => 'C:\\xampp\\htdocs\\main\\TPE-WEB2\\templates\\showAdmPersonage.tpl',
-      1 => 1664669881,
+      1 => 1664740784,
       2 => 'file',
     ),
   ),
@@ -23,7 +23,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:footer.tpl' => 1,
   ),
 ),false)) {
-function content_6338d8e2a8c779_52531070 (Smarty_Internal_Template $_smarty_tpl) {
+function content_6339edb3d934c9_32452077 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_subTemplateRender("file:header.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
 ?>
     
@@ -33,11 +33,11 @@ $_smarty_tpl->_subTemplateRender("file:header.tpl", $_smarty_tpl->cache_id, $_sm
 <table class="table container text-center border border-black">
     <thead class="table-dark border border-black">
         <tr>
-            <th class="col-2">Nombre</th>
-            <th class="col-2">Apellido</th>
-            <th class="col-2">Clase</th>
-            <th class="col-2">Raza</th>
-            <th class="col-2">Acciones</th>
+            <th class="col-2 border border-black">Nombre</th>
+            <th class="col-2 border border-black">Apellido</th>
+            <th class="col-2 border border-black">Clase</th>
+            <th class="col-2 border border-black">Raza</th>
+            <th class="col-2 border border-black">Acciones</th>
         </tr>
     </thead>
     <tbody> 

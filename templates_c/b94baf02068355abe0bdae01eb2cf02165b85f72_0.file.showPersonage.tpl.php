@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 4.2.1, created on 2022-10-01 03:31:29
+/* Smarty version 4.2.1, created on 2022-10-02 21:58:32
   from 'C:\xampp\htdocs\main\TPE-WEB2\templates\showPersonage.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '4.2.1',
-  'unifunc' => 'content_63379871411cd9_21947005',
+  'unifunc' => 'content_6339ed68d13741_97568955',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'b94baf02068355abe0bdae01eb2cf02165b85f72' => 
     array (
       0 => 'C:\\xampp\\htdocs\\main\\TPE-WEB2\\templates\\showPersonage.tpl',
-      1 => 1664587886,
+      1 => 1664740709,
       2 => 'file',
     ),
   ),
@@ -22,21 +22,21 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:footer.tpl' => 1,
   ),
 ),false)) {
-function content_63379871411cd9_21947005 (Smarty_Internal_Template $_smarty_tpl) {
+function content_6339ed68d13741_97568955 (Smarty_Internal_Template $_smarty_tpl) {
 ?> <?php $_smarty_tpl->_subTemplateRender("file:header.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
 ?>
     
 <h2>Lista de Personaje</h2>
 <div class="table-responsive ">
 
-    <table class="table container text-center">
-        <thead class="table-dark">
+    <table class="table container text-center border border-black">
+        <thead class="table-dark border border-black">
             <tr>
-                <th >Nombre</th>
-                <th >Apellido</th>
-                <th >Clase</th>
-                <th >Raza</th>
-                <th >Accion</th>
+                <th class="border border-black">Nombre</th>
+                <th class="border border-black">Apellido</th>
+                <th class="border border-black">Clase</th>
+                <th class="border border-black">Raza</th>
+                <th class="border border-black">Accion</th>
             </tr>
         </thead>
         <tbody>
@@ -48,15 +48,15 @@ if ($_from !== null) foreach ($_from as $_smarty_tpl->tpl_vars['personage']->val
 $_smarty_tpl->tpl_vars['personage']->do_else = false;
 ?> 
                 <tr>
-                    <td><?php echo $_smarty_tpl->tpl_vars['personage']->value->nombre_p;?>
+                    <td class="border border-black"><?php echo $_smarty_tpl->tpl_vars['personage']->value->nombre_p;?>
 </td> 
-                    <td><?php echo $_smarty_tpl->tpl_vars['personage']->value->apellido;?>
+                    <td class="border border-black"><?php echo $_smarty_tpl->tpl_vars['personage']->value->apellido;?>
 </td>
-                    <td><?php echo $_smarty_tpl->tpl_vars['personage']->value->clase;?>
+                    <td class="border border-black"><?php echo $_smarty_tpl->tpl_vars['personage']->value->clase;?>
 </td>
-                    <td><?php echo $_smarty_tpl->tpl_vars['personage']->value->nombre_r;?>
+                    <td class="border border-black"><?php echo $_smarty_tpl->tpl_vars['personage']->value->nombre_r;?>
 </td> 
-                    <td><a href='public/personage/<?php echo $_smarty_tpl->tpl_vars['personage']->value->id_personaje;?>
+                    <td class="border border-black"><a href='public/personage/<?php echo $_smarty_tpl->tpl_vars['personage']->value->id_personaje;?>
 ' type='button' class='btn btn-primary ml-auto'>Detalle</a></td>
                 </tr>
             <?php
