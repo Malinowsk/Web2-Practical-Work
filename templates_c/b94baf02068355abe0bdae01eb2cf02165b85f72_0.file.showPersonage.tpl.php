@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 4.2.1, created on 2022-09-30 15:39:44
+/* Smarty version 4.2.1, created on 2022-10-01 03:31:29
   from 'C:\xampp\htdocs\main\TPE-WEB2\templates\showPersonage.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '4.2.1',
-  'unifunc' => 'content_6336f1a0bfdde2_98256764',
+  'unifunc' => 'content_63379871411cd9_21947005',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'b94baf02068355abe0bdae01eb2cf02165b85f72' => 
     array (
       0 => 'C:\\xampp\\htdocs\\main\\TPE-WEB2\\templates\\showPersonage.tpl',
-      1 => 1664545177,
+      1 => 1664587886,
       2 => 'file',
     ),
   ),
@@ -22,21 +22,21 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:footer.tpl' => 1,
   ),
 ),false)) {
-function content_6336f1a0bfdde2_98256764 (Smarty_Internal_Template $_smarty_tpl) {
+function content_63379871411cd9_21947005 (Smarty_Internal_Template $_smarty_tpl) {
 ?> <?php $_smarty_tpl->_subTemplateRender("file:header.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
 ?>
     
-<h1>Lista de Personaje</h1>
+<h2>Lista de Personaje</h2>
 <div class="table-responsive ">
 
-    <table class="table">
-        <thead>
+    <table class="table container text-center">
+        <thead class="table-dark">
             <tr>
-                <th scope="col">Nombre</th>
-                <th scope="col">Apellido</th>
-                <th scope="col">Clase</th>
-                <th scope="col">Raza</th>
-                <th scope="col">Accion</th>
+                <th >Nombre</th>
+                <th >Apellido</th>
+                <th >Clase</th>
+                <th >Raza</th>
+                <th >Accion</th>
             </tr>
         </thead>
         <tbody>

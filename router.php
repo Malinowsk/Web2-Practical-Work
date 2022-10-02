@@ -11,7 +11,7 @@ if (!empty($_GET['action'])) {
 // parsea la accion Ej: dev/juan --> ['dev', juan]
 $params = explode('/', $action);
 
-// instancio el unico controller que existe por ahora
+// instancio el unico controller
 $GameController = new GameController();
 
 
@@ -61,6 +61,18 @@ switch ($params[0]) {
                                 $id = $params[3];
                                 $GameController->deletePersonage($id);
                                 break;
+                            case 'edit':
+                                if(!empty($params[3])){
+                                    if($params[3] == 'confirm'){
+                                        $id = $params[4];
+                                        $GameController->editPersonage($id);
+                                    }
+                                    else{
+                                        $id = $params[3];
+                                        $GameController->preEditPersonage($id);
+                                    }
+                                }
+                                break;
                             default:
                                 echo('404 Page not found');
                                 break;
@@ -76,8 +88,29 @@ switch ($params[0]) {
                                 $GameController->addRace();
                                 break;
                             case 'delete':
-                                $id = $params[3];
-                                $GameController->deleteRace($id);
+                                if(!empty($params[3])){
+                                    if($params[3] == 'confirm'){
+                                        $id = $params[4];
+                                        $GameController->delete($id);
+                                    }
+                                    else{
+                                        $id = $params[3];
+                                        $GameController->deleteRace($id);
+                                    }
+                                }
+                                
+                                break;
+                            case 'edit':
+                                if(!empty($params[3])){
+                                    if($params[3] == 'confirm'){
+                                        $id = $params[4];
+                                        $GameController->editRace($id);
+                                    }
+                                    else{
+                                        $id = $params[3];
+                                        $GameController->preEditRace($id);
+                                    }
+                                }
                                 break;
                             default:
                                 echo('404 Page not found');

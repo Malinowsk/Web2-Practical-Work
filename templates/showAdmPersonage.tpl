@@ -1,51 +1,28 @@
 {include file="header.tpl"}
     
-<form action='admin/personage/add' method='POST' class='my-4'>
-    <h1>Agregar Personaje</h1>
-    <div class='row'>
-        <div class='col-3'>
-            <div class='form-group'>
-                <label>Nombre</label>
-                <input name='name' type='text' class='form-control'>
-            </div>
-        </div>
-        
-        <div class='col-3'>
-            <div class='form-group'>
-                <label>Apellido</label>
-                <input name='lastname' type='text' class='form-control'>
-            </div>
-        </div>
+{include file="form_personage.tpl" scope=parent}
 
-        <div class='col-3'>
-            <div class='form-group'>
-                <label>Clase</label>
-                <input name='class' type='text' class='form-control'>
-            </div>
-        </div>
-
-        <div class='col-3'>
-            <div class='form-group'>
-                <label>Raza</label>
-                <select name='race' class='form-control'>
-                {foreach $races as $race} 
-                    <option value="{$race->id_raza}">{$race->nombre}</option>
-                {/foreach} 
-                </select>
-            </div>
-        </div>
-    </div>
-
-    <button type="submit" class="btn btn-primary mt-3">Guardar</button>
-</form>
-
-<ul class="list-group">
-    {foreach $personages as $personage} 
-        <li class='list-group-item d-flex justify-content-between align-items-center'>
-            <span> Nombre: <b>{$personage->nombre_p}</b> - Apellido: <b>{$personage->apellido}</b> - Clase: <b>{$personage->clase} </b> </span>
-            <a href='admin/personage/delete/{$personage->id_personaje}' type='button' class='btn btn-danger ml-auto'>Borrar</a>
-        </li>
-    {/foreach} 
-</ul>
+<table class="table container text-center border border-black">
+    <thead class="table-dark border border-black">
+        <tr>
+            <th class="col-2">Nombre</th>
+            <th class="col-2">Apellido</th>
+            <th class="col-2">Clase</th>
+            <th class="col-2">Raza</th>
+            <th class="col-2">Acciones</th>
+        </tr>
+    </thead>
+    <tbody> 
+        {foreach $personages as $personage}
+            <tr>
+                <td class = "border border-black fst-italic">{$personage->nombre_p}</td> 
+                <td class = "border border-black fst-italic">{$personage->apellido}</td>
+                <td class = "border border-black fst-italic">{$personage->clase}</td> 
+                <td class = "border border-black fst-italic">{$personage->nombre_r}</td>
+                <td class = "border border-black"><a href='admin/personage/edit/{$personage->id_personaje}' type='button' class='btn btn-success ml-auto ms-3 me-3'>Editar</a><a href='admin/personage/delete/{$personage->id_personaje}' type='button' class='btn btn-danger ml-auto ms-3 me-3'>Borrar</a></td>
+            </tr>
+        {/foreach} 
+    </tbody>
+</table>
 
 {include file="footer.tpl"}

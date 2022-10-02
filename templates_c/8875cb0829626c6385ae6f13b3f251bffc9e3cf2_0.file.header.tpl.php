@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 4.2.1, created on 2022-09-30 03:46:01
+/* Smarty version 4.2.1, created on 2022-10-01 03:30:42
   from 'C:\xampp\htdocs\main\TPE-WEB2\templates\header.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '4.2.1',
-  'unifunc' => 'content_63364a590bdf35_17512374',
+  'unifunc' => 'content_633798420c4112_11731202',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '8875cb0829626c6385ae6f13b3f251bffc9e3cf2' => 
     array (
       0 => 'C:\\xampp\\htdocs\\main\\TPE-WEB2\\templates\\header.tpl',
-      1 => 1664501442,
+      1 => 1664587838,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_63364a590bdf35_17512374 (Smarty_Internal_Template $_smarty_tpl) {
+function content_633798420c4112_11731202 (Smarty_Internal_Template $_smarty_tpl) {
 ?><!DOCTYPE html>
 <html lang="en">
 <head>
@@ -36,7 +36,7 @@ function content_63364a590bdf35_17512374 (Smarty_Internal_Template $_smarty_tpl)
 </head>
 <body>
     <header>
-        <nav class="navbar navbar-expand-lg bg-light">
+        <nav class="navbar navbar-expand-lg bg-secondary">
             <div class="container-fluid">
               <a class="navbar-brand" href="">Warcraft</a>
               <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">

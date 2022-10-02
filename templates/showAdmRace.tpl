@@ -1,14 +1,26 @@
 {include file="header.tpl"}
 
-{include file="form_alta.tpl"} 
+{include file="form_race.tpl"} 
 
-<ul class="list-group">
-    {foreach $races as $race}
-        <li class='list-group-item d-flex justify-content-between align-items-center'>
-            <span> Nombre: <b>{$race->nombre}</b> - faccion: <b>{$race->faccion}</b> </span>
-            <a href='admin/race/delete/{$race->id_raza}' type='button' class='btn btn-danger ml-auto'>Borrar</a>
-        </li>
-    {/foreach} 
-</ul>
+
+<table class="table container text-center border border-black">
+    <thead class="table-dark border border-black">
+        <tr>
+            <th class="col-4">Nombre</th>
+            <th class="col-4">Faccion</th>
+            <th class="col-2">Accion</th>
+        </tr>
+    </thead>
+    <tbody> 
+        {foreach $races as $race}
+            <tr>
+                <td class = "border border-black fst-italic">{$race->nombre}</td> 
+                <td class = "border border-black fst-italic">{$race->faccion}</td>
+                <td class = "border border-black"><a href='admin/race/edit/{$race->id_raza}' type='button' class='btn btn-success ml-auto ms-3 me-3'>Editar</a><a href='admin/race/delete/{$race->id_raza}' type='button' class='btn btn-danger ml-auto ms-3 me-3'>Borrar</a></td>
+            </tr>
+        {/foreach} 
+    </tbody>
+</table>
+
 
 {include file="footer.tpl"}

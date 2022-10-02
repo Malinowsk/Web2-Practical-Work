@@ -25,7 +25,7 @@ class GameController {
         if (!isset($id))
             $this->view->showPersonage($personage);
         else{ 
-            $detalle = $this->personage_model->getPersonaje($id);
+            $detalle = $this->personage_model->getPersonageWithRace($id);
             $this->view->showPersonage($personage,$detalle);
         }
     }
@@ -35,7 +35,7 @@ class GameController {
         if (!isset($id)){
             $this->view->showRace($race);}
         else{
-            $personages_race = $this->personage_model->getOneRacePersonages($id);
+            $personages_race = $this->personage_model->getOneRacePersonagesComplete($id);
             $this->view->showRace($race,$personages_race);
         }
 
@@ -52,8 +52,6 @@ class GameController {
         $lastname = $_POST['lastname'];
         $class = $_POST['class'];
         $race = $_POST['race'];
-        echo $name;
-        echo $race;
 
         $id = $this->personage_model->insert($name, $lastname, $class, $race);
 
@@ -61,11 +59,9 @@ class GameController {
     }
    
     function deletePersonage($id) {
-        $this->personage_model->deleteById($id);
+        $this->personage_model->delete($id);
         header("Location: " . BASE_URL . "admin/personage");
     }
-
-    
 
     public function showAdmRace() {
         $race = $this->race_model->getAll();
@@ -83,8 +79,49 @@ class GameController {
     }
 
     function deleteRace($id) {
-        $this->race_model->deleteById($id);
-        header("Location: " . BASE_URL . "admin/race");
+        $personages = $this->personage_model->getOneRacePersonages($id);
+        if (empty($personages)){
+            $this->delete($id);
+        }
+        else{
+            $this->view->showConfirmDelete($personages);
+        }
     }
 
+    public function delete($id) {
+        $this->race_model->delete($id);
+        header("Location: " . BASE_URL . "admin/race");
+    }
+    
+    function preEditPersonage($id) {
+        $edit = $this->personage_model->getPersonage($id);
+        $race = $this->race_model->getAll();
+        $this->view->editAdmPersonage($edit,$race);
+    }
+
+    function editPersonage($id) {
+        $name = $_POST['name'];
+        $lastname = $_POST['lastname'];
+        $class = $_POST['class'];
+        $race = $_POST['race'];
+
+        $idw = $this->personage_model->update($name, $lastname, $class, $race, $id);
+
+        header("Location: " . BASE_URL . "admin/personage"); 
+    }
+
+    function preEditRace($id) {
+        $edit = $this->race_model->getRace($id);
+
+        $this->view->editAdmRace($edit);
+    }
+
+    function editRace($id) {
+        $name = $_POST['name'];
+        $faccion = $_POST['faccion'];
+        
+        $idw = $this->race_model->update($name, $faccion, $id);
+
+        header("Location: " . BASE_URL . "admin/race"); 
+    }
 }

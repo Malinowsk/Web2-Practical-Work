@@ -24,17 +24,32 @@ class RaceModel {
 
      
     public function insert($name, $faccion) {
-        echo $name;
-        echo $faccion;
         $query = $this->db->prepare("INSERT INTO Raza (nombre, faccion) VALUES (?, ?)");
         $query->execute([$name, $faccion]);
         
         return $this->db->lastInsertId();
     }
      
-    function deleteById($id) {
+    public function delete($id) {
         $query = $this->db->prepare('DELETE FROM Raza WHERE id_raza = ?');
         $query->execute([$id]);
+    }
+
+    public function update($name, $faccion, $id) {
+        $query = $this->db->prepare('UPDATE Raza SET nombre = ? , faccion = ? WHERE id_raza = ?');
+        $query->execute([$name, $faccion, $id]);
+    }
+
+    public function getRace($id){
+        
+        $query = $this->db->prepare("SELECT * FROM Raza WHERE id_raza=?");
+        //select * from Personaje join Raza on Personaje.id_raza = Raza.id_raza;
+        $query->execute([$id]);
+
+        // 3. obtengo los resultados
+        $race = $query->fetchAll(PDO::FETCH_OBJ); // devuelve un arreglo de objetos
+        
+        return $race;
     }
 
 }

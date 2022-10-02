@@ -1,16 +1,16 @@
  {include file="header.tpl"}
     
-<h1>Lista de Personaje</h1>
+<h2>Lista de Personaje</h2>
 <div class="table-responsive ">
 
-    <table class="table">
-        <thead>
+    <table class="table container text-center">
+        <thead class="table-dark">
             <tr>
-                <th scope="col">Nombre</th>
-                <th scope="col">Apellido</th>
-                <th scope="col">Clase</th>
-                <th scope="col">Raza</th>
-                <th scope="col">Accion</th>
+                <th >Nombre</th>
+                <th >Apellido</th>
+                <th >Clase</th>
+                <th >Raza</th>
+                <th >Accion</th>
             </tr>
         </thead>
         <tbody>

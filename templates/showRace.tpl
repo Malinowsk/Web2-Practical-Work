@@ -4,12 +4,12 @@
 <div class="row g-2">
     <div class="col-sm-6">
 
-        <h1>Lista de Razas</h1>
+        <h2>Lista de Razas</h2>
 
         <div class="table-responsive ">
 
-            <table class="table">
-                <thead>
+            <table class="table container text-center">
+                <thead  class="table-dark">
                     <tr>
                         <th scope="col">Nombre</th>
                         <th scope="col">Faccion</th>
@@ -37,8 +37,8 @@
             
             <div class="table-responsive ">
 
-                <table class="table">
-                    <thead>
+                <table class="table container text-center">
+                    <thead  class="table-dark">
                         <tr>
                             <th scope="col">Nombre</th>
                             <th scope="col">Apellido</th>
