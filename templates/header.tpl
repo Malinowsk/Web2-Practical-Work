@@ -15,9 +15,6 @@
         <nav class="navbar navbar-expand-lg bg-secondary">
             <div class="container-fluid">
               <a class="navbar-brand" href="">Warcraft</a>
-              <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-              </button>
               <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav">
                   <li class="nav-item">
@@ -26,16 +23,30 @@
                   <li class="nav-item">
                     <a class="nav-link" aria-current="page" href="public/race">Razas</a>
                   </li>
-                  <li class="nav-item">
-                    <a class="nav-link" aria-current="page" href="admin/personage">Administrar Personajes</a>
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link" aria-current="page" href="admin/race"">Administrar Razas</a>
-                  </li>
+                  {if isset($smarty.session.USER_ID)}
+                
+                    <li class="nav-item">
+                      <a class="nav-link" aria-current="page" href="admin/personage">Administrar Personajes</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link" aria-current="page" href="admin/race"">Administrar Razas</a>
+                    </li>
+                  
+                  {/if}
                 </ul>
               </div>
             </div>
-          </nav>
+           {* {if isset($loggedIn) and $loggedIn == true} *}
+            {if isset($smarty.session.USER_ID)}
+              <div>
+                <button type="button" class="btn btn-dark me-3"> <a href='public/logout' class="text-decoration-none text-while">Salir</a> </button>
+              </div>
+            {else} 
+              <div>
+                <button class="btn btn-dark me-3"> <a href='public/login' class="text-decoration-none text-while">Iniciar sesión</a> </button>
+              </div>
+            {/if}
+        </nav>
     </header>
 
     <!-- inicio main container -->

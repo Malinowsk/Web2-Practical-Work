@@ -1,5 +1,6 @@
 <?php
 require_once './app/controllers/game.controller.php';
+require_once './app/controllers/session.controller.php';
 
 define('BASE_URL', '//'.$_SERVER['SERVER_NAME'] . ':' . $_SERVER['SERVER_PORT'] . dirname($_SERVER['PHP_SELF']).'/');
 
@@ -11,26 +12,37 @@ if (!empty($_GET['action'])) {
 // parsea la accion Ej: dev/juan --> ['dev', juan]
 $params = explode('/', $action);
 
-// instancio el unico controller
-$GameController = new GameController();
-
-
 // tabla de ruteo
 switch ($params[0]) {
     case 'public':
         if(empty($params[1])){
+            $GameController = new GameController();
             $GameController->ShowHome();
             break;
         }
         else{
             switch ($params[1]){
+                case 'login':
+                    $SessionController = new SessionController();
+                    $SessionController->showLogin();
+                    break;
+                case 'validate':
+                    $SessionController = new SessionController();
+                    $SessionController->validateUser();
+                    break;
+                case 'logout':
+                    $SessionController = new SessionController();
+                    $SessionController->logout();
+                    break;
                 case 'personage':
+                    $GameController = new GameController();
                     if (empty($params[2]))
                         $GameController->showPersonage();
                     else
                         $GameController->showPersonage($params[2]);
                     break;
                 case 'race':
+                    $GameController = new GameController();
                     if (empty($params[2]))
                         $GameController->showRace();
                     else
@@ -44,12 +56,14 @@ switch ($params[0]) {
         }
     case 'admin':
         if(empty($params[1])){
+            $GameController = new GameController();
             $GameController->ShowHome();
             break;
         }
         else{
             switch ($params[1]){
                 case 'personage':
+                    $GameController = new GameController();
                     if(empty($params[2])){
                         $GameController->showAdmPersonage();
                     }else{   
@@ -80,6 +94,7 @@ switch ($params[0]) {
                     }
                     break;
                 case 'race':
+                    $GameController = new GameController();
                     if(empty($params[2])){
                         $GameController->showAdmRace();
                     }else{   

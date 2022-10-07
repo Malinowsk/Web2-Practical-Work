@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 4.2.1, created on 2022-10-01 03:30:42
+/* Smarty version 4.2.1, created on 2022-10-07 22:49:56
   from 'C:\xampp\htdocs\main\TPE-WEB2\templates\header.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '4.2.1',
-  'unifunc' => 'content_633798420c4112_11731202',
+  'unifunc' => 'content_634090f470e733_30559204',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '8875cb0829626c6385ae6f13b3f251bffc9e3cf2' => 
     array (
       0 => 'C:\\xampp\\htdocs\\main\\TPE-WEB2\\templates\\header.tpl',
-      1 => 1664587838,
+      1 => 1665175794,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_633798420c4112_11731202 (Smarty_Internal_Template $_smarty_tpl) {
+function content_634090f470e733_30559204 (Smarty_Internal_Template $_smarty_tpl) {
 ?><!DOCTYPE html>
 <html lang="en">
 <head>
@@ -39,9 +39,6 @@ function content_633798420c4112_11731202 (Smarty_Internal_Template $_smarty_tpl)
         <nav class="navbar navbar-expand-lg bg-secondary">
             <div class="container-fluid">
               <a class="navbar-brand" href="">Warcraft</a>
-              <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-              </button>
               <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav">
                   <li class="nav-item">
@@ -50,16 +47,29 @@ function content_633798420c4112_11731202 (Smarty_Internal_Template $_smarty_tpl)
                   <li class="nav-item">
                     <a class="nav-link" aria-current="page" href="public/race">Razas</a>
                   </li>
-                  <li class="nav-item">
-                    <a class="nav-link" aria-current="page" href="admin/personage">Administrar Personajes</a>
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link" aria-current="page" href="admin/race"">Administrar Razas</a>
-                  </li>
+                  <?php if ((isset($_SESSION['USER_ID']))) {?>
+                
+                    <li class="nav-item">
+                      <a class="nav-link" aria-current="page" href="admin/personage">Administrar Personajes</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link" aria-current="page" href="admin/race"">Administrar Razas</a>
+                    </li>
+                  
+                  <?php }?>
                 </ul>
               </div>
             </div>
-          </nav>
+                       <?php if ((isset($_SESSION['USER_ID']))) {?>
+              <div>
+                <button type="button" class="btn btn-dark me-3"> <a href='public/logout' class="text-decoration-none text-while">Salir</a> </button>
+              </div>
+            <?php } else { ?> 
+              <div>
+                <button class="btn btn-dark me-3"> <a href='public/login' class="text-decoration-none text-while">Iniciar sesión</a> </button>
+              </div>
+            <?php }?>
+        </nav>
     </header>
 
     <!-- inicio main container -->

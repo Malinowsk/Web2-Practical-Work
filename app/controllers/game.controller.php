@@ -2,19 +2,25 @@
 require_once './app/models/personage.model.php';
 require_once './app/models/race.model.php';
 require_once './app/views/game.view.php';
+require_once './app/helpers/auth.helper.php';
 
 class GameController {
     private $personage_model;
     private $race_model;
     private $view;
+    private $authHelper;
 
     public function __construct() {
         $this->personage_model = new PersonageModel();
         $this->race_model = new RaceModel();
         $this->view = new GameView();
+        $this->authHelper = new AuthHelper();
+        //$loggedIn = $this->authHelper->getLoggedIn();
+
     }
 
     public function showHome() {
+        $loggedIn = $this->authHelper->getLoggedIn();
         $this->view->showHome();
     }
 
@@ -42,12 +48,16 @@ class GameController {
     }
 
     public function showAdmPersonage() {
+        $this->authHelper->checkLoggedIn();
+
         $personage = $this->personage_model->getAll();
         $race = $this->race_model->getAll();
         $this->view->showAdmPersonage($race,$personage);
     }
 
     public function addPersonage() {
+        $this->authHelper->checkLoggedIn();
+
         $name = $_POST['name'];
         $lastname = $_POST['lastname'];
         $class = $_POST['class'];
@@ -59,17 +69,20 @@ class GameController {
     }
    
     public function deletePersonage($id) {
+        $this->authHelper->checkLoggedIn();
         $this->personage_model->delete($id);
         header("Location: " . BASE_URL . "admin/personage");
     }
 
     public function showAdmRace() {
+        $this->authHelper->checkLoggedIn();
         $race = $this->race_model->getAll();
         $this->view->showAdmRace($race);
     }
 
      //addRace
      public function addRace() {
+        $this->authHelper->checkLoggedIn();
         $name = $_POST['name'];
         $faccion = $_POST['faccion'];
 
@@ -79,6 +92,7 @@ class GameController {
     }
 
     public function deleteRace($id) {
+        $this->authHelper->checkLoggedIn();
         $personages = $this->personage_model->getOneRacePersonages($id);
         if (empty($personages)){
             $this->delete($id);
@@ -89,17 +103,20 @@ class GameController {
     }
 
     public function delete($id) {
+        $this->authHelper->checkLoggedIn();
         $this->race_model->delete($id);
         header("Location: " . BASE_URL . "admin/race");
     }
     
     public function preEditPersonage($id) {
+        $this->authHelper->checkLoggedIn();
         $edit = $this->personage_model->getPersonage($id);
         $race = $this->race_model->getAll();
         $this->view->editAdmPersonage($edit,$race);
     }
 
     public function editPersonage($id) {
+        $this->authHelper->checkLoggedIn();
         $name = $_POST['name'];
         $lastname = $_POST['lastname'];
         $class = $_POST['class'];
@@ -111,12 +128,14 @@ class GameController {
     }
 
     public function preEditRace($id) {
+        $this->authHelper->checkLoggedIn();
         $edit = $this->race_model->getRace($id);
 
         $this->view->editAdmRace($edit);
     }
 
     public function editRace($id) {
+        $this->authHelper->checkLoggedIn();
         $name = $_POST['name'];
         $faccion = $_POST['faccion'];
         

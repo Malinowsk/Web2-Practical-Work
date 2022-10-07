@@ -10,7 +10,7 @@ class GameView {
 
     // muestra la vista cuando se tocael icono logo warcraft
     function showHome(){
-        //$this->smarty->assign("BASE_URL", BASE_URL);
+        //var_dump($loggedIn);
         $this->smarty->display('./templates/header.tpl');
         $this->smarty->display('./templates/footer.tpl');
     }
