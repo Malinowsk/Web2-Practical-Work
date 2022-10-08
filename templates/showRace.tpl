@@ -3,7 +3,7 @@
 <div class="row g-2">
     <div class="col-sm-6">
 
-        <h2>Lista de Razas</h2>
+        <h2 class='my-4'>Lista de Razas</h2>
 
         <div class="table-responsive ">
 
@@ -18,10 +18,10 @@
                 <tbody>
 
                     {foreach $races as $race} 
-                        <tr class="border border-black">
-                            <td class="border border-black">{$race->nombre}</td> 
-                            <td class="border border-black">{$race->faccion}</td>
-                            <td class="border border-black"><a href='public/race/{$race->id_raza}' type='button' class='btn btn-primary ml-auto'>Detalle</a></td>
+                        <tr class="border border-black" style="color:#C1DD94">
+                            <td class="border border-black fst-italic">{$race->nombre}</td> 
+                            <td class="border border-black fst-italic">{$race->faccion}</td>
+                            <td class="border border-black fst-italic"><a href='public/race/{$race->id_raza}' type='button' class='btn btn-primary ml-auto'>Detalle</a></td>
                         </tr>
                     {/foreach} 
                 </tbody>
@@ -30,36 +30,39 @@
     </div>
 
     <div class="col-sm-6">
-        {if $details != null}
-            <h2>Lista de Personaje de la raza : {$details[0]->nombre_r}</h2>
-            
-            <div class="table-responsive ">
+        {if isset($details)}
 
-                <table class="table container text-center border border-black">
-                    <thead  class="table-dark border border-black">
-                        <tr>
-                            <th class="border border-black" scope="col">Nombre</th>
-                            <th class="border border-black" scope="col">Apellido</th>
-                            <th class="border border-black" scope="col">Clase</th>
-                            <th class="border border-black" scope="col">Raza</th>
-                        </tr>
-                    </thead>
-                    <tbody>
+            {if !empty($details)}
+                
+                <h2 class='my-4'>Lista de Personaje de la raza : {$details[0]->nombre_r}</h2>
 
-                        {foreach $details as $detail} 
+                <div class="table-responsive ">
+
+                    <table class="table container text-center border border-black">
+                        <thead  class="table-dark border border-black">
                             <tr>
-                                <td class="border border-black">{$detail->nombre_p}</td> 
-                                <td class="border border-black">{$detail->apellido}</td>
-                                <td class="border border-black">{$detail->clase}</td>
-                                <td class="border border-black">{$detail->nombre_r}</td> 
+                                <th class="border border-black" scope="col">Nombre</th>
+                                <th class="border border-black" scope="col">Apellido</th>
+                                <th class="border border-black" scope="col">Clase</th>
+                                <th class="border border-black" scope="col">Raza</th>
                             </tr>
-                        {/foreach} 
-                    </tbody>
-                </table>
-            </div>
-        
-        {else}
-            <h2>No existe cargado personajes de esa raza</h2>
+                        </thead>
+                        <tbody>
+
+                            {foreach $details as $detail} 
+                                <tr style="color:#C1DD94" >
+                                    <td class="border border-black">{$detail->nombre_p}</td> 
+                                    <td class="border border-black">{$detail->apellido}</td>
+                                    <td class="border border-black">{$detail->clase}</td>
+                                    <td class="border border-black">{$detail->nombre_r}</td> 
+                                </tr>
+                            {/foreach} 
+                        </tbody>
+                    </table>
+                </div>
+            {else}
+                <h2 class='my-4 mt-4 ms-4'>No existe cargado personajes de esa raza</h2>
+            {/if}
         {/if}
     </div>
 </div>

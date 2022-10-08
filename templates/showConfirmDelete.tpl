@@ -4,21 +4,21 @@
 
     <div class="table-responsive ">
 
-        <table class="table container text-center">
-            <thead  class="table-dark">
+        <table class="table container text-center border border-black">
+            <thead class="table-dark border border-black">
                 <tr>
-                    <th scope="col">Nombre</th>
-                    <th scope="col">Apellido</th>
-                    <th scope="col">Clase</th>
+                    <th class="col-2 border border-black" scope="col">Nombre</th>
+                    <th class="col-2 border border-black" scope="col">Apellido</th>
+                    <th class="col-2 border border-black" scope="col">Clase</th>
                 </tr>
             </thead>
             <tbody>
 
                 {foreach $personages as $personage} 
-                    <tr>
-                        <td>{$personage->nombre_p}</td> 
-                        <td>{$personage->apellido}</td>
-                        <td>{$personage->clase}</td>
+                    <tr style="color:#C1DD94">
+                        <td class = "border border-black fst-italic">{$personage->nombre_p}</td> 
+                        <td class = "border border-black fst-italic">{$personage->apellido}</td>
+                        <td class = "border border-black fst-italic">{$personage->clase}</td>
                     </tr>
                 {/foreach} 
             </tbody>

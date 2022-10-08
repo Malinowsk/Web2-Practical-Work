@@ -14,7 +14,7 @@
     </thead>
     <tbody> 
         {foreach $personages as $personage}
-            <tr>
+            <tr style="color:#C1DD94">
                 <td class = "border border-black fst-italic">{$personage->nombre_p}</td> 
                 <td class = "border border-black fst-italic">{$personage->apellido}</td>
                 <td class = "border border-black fst-italic">{$personage->clase}</td> 

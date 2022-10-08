@@ -15,12 +15,11 @@ class GameController {
         $this->race_model = new RaceModel();
         $this->view = new GameView();
         $this->authHelper = new AuthHelper();
-        //$loggedIn = $this->authHelper->getLoggedIn();
 
     }
 
     public function showHome() {
-        $loggedIn = $this->authHelper->getLoggedIn();
+        //$loggedIn = $this->authHelper->getLoggedIn();
         $this->view->showHome();
     }
 
@@ -42,6 +41,9 @@ class GameController {
             $this->view->showRace($race);}
         else{
             $personages_race = $this->personage_model->getOneRacePersonagesComplete($id);
+            if (!isset($personages_race)){
+                $personages_race=[];
+            }
             $this->view->showRace($race,$personages_race);
         }
 

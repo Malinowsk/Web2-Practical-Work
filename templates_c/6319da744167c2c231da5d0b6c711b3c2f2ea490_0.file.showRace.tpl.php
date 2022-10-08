@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 4.2.1, created on 2022-10-07 23:07:56
+/* Smarty version 4.2.1, created on 2022-10-08 04:00:22
   from 'C:\xampp\htdocs\main\TPE-WEB2\templates\showRace.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '4.2.1',
-  'unifunc' => 'content_6340952c155a33_69127441',
+  'unifunc' => 'content_6340d9b68b97b7_94355017',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '6319da744167c2c231da5d0b6c711b3c2f2ea490' => 
     array (
       0 => 'C:\\xampp\\htdocs\\main\\TPE-WEB2\\templates\\showRace.tpl',
-      1 => 1665176264,
+      1 => 1665194421,
       2 => 'file',
     ),
   ),
@@ -22,14 +22,14 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:footer.tpl' => 1,
   ),
 ),false)) {
-function content_6340952c155a33_69127441 (Smarty_Internal_Template $_smarty_tpl) {
+function content_6340d9b68b97b7_94355017 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_subTemplateRender("file:header.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
 ?> 
      
 <div class="row g-2">
     <div class="col-sm-6">
 
-        <h2>Lista de Razas</h2>
+        <h2 class='my-4'>Lista de Razas</h2>
 
         <div class="table-responsive ">
 
@@ -49,12 +49,12 @@ $_smarty_tpl->tpl_vars['race']->do_else = true;
 if ($_from !== null) foreach ($_from as $_smarty_tpl->tpl_vars['race']->value) {
 $_smarty_tpl->tpl_vars['race']->do_else = false;
 ?> 
-                        <tr class="border border-black">
-                            <td class="border border-black"><?php echo $_smarty_tpl->tpl_vars['race']->value->nombre;?>
+                        <tr class="border border-black" style="color:#C1DD94">
+                            <td class="border border-black fst-italic"><?php echo $_smarty_tpl->tpl_vars['race']->value->nombre;?>
 </td> 
-                            <td class="border border-black"><?php echo $_smarty_tpl->tpl_vars['race']->value->faccion;?>
+                            <td class="border border-black fst-italic"><?php echo $_smarty_tpl->tpl_vars['race']->value->faccion;?>
 </td>
-                            <td class="border border-black"><a href='public/race/<?php echo $_smarty_tpl->tpl_vars['race']->value->id_raza;?>
+                            <td class="border border-black fst-italic"><a href='public/race/<?php echo $_smarty_tpl->tpl_vars['race']->value->id_raza;?>
 ' type='button' class='btn btn-primary ml-auto'>Detalle</a></td>
                         </tr>
                     <?php
@@ -66,48 +66,51 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
     </div>
 
     <div class="col-sm-6">
-        <?php if ($_smarty_tpl->tpl_vars['details']->value != null) {?>
-            <h2>Lista de Personaje de la raza : <?php echo $_smarty_tpl->tpl_vars['details']->value[0]->nombre_r;?>
+        <?php if ((isset($_smarty_tpl->tpl_vars['details']->value))) {?>
+
+            <?php if (!empty($_smarty_tpl->tpl_vars['details']->value)) {?>
+                
+                <h2 class='my-4'>Lista de Personaje de la raza : <?php echo $_smarty_tpl->tpl_vars['details']->value[0]->nombre_r;?>
 </h2>
-            
-            <div class="table-responsive ">
 
-                <table class="table container text-center border border-black">
-                    <thead  class="table-dark border border-black">
-                        <tr>
-                            <th class="border border-black" scope="col">Nombre</th>
-                            <th class="border border-black" scope="col">Apellido</th>
-                            <th class="border border-black" scope="col">Clase</th>
-                            <th class="border border-black" scope="col">Raza</th>
-                        </tr>
-                    </thead>
-                    <tbody>
+                <div class="table-responsive ">
 
-                        <?php
+                    <table class="table container text-center border border-black">
+                        <thead  class="table-dark border border-black">
+                            <tr>
+                                <th class="border border-black" scope="col">Nombre</th>
+                                <th class="border border-black" scope="col">Apellido</th>
+                                <th class="border border-black" scope="col">Clase</th>
+                                <th class="border border-black" scope="col">Raza</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+
+                            <?php
 $_from = $_smarty_tpl->smarty->ext->_foreach->init($_smarty_tpl, $_smarty_tpl->tpl_vars['details']->value, 'detail');
 $_smarty_tpl->tpl_vars['detail']->do_else = true;
 if ($_from !== null) foreach ($_from as $_smarty_tpl->tpl_vars['detail']->value) {
 $_smarty_tpl->tpl_vars['detail']->do_else = false;
 ?> 
-                            <tr>
-                                <td class="border border-black"><?php echo $_smarty_tpl->tpl_vars['detail']->value->nombre_p;?>
+                                <tr style="color:#C1DD94" >
+                                    <td class="border border-black"><?php echo $_smarty_tpl->tpl_vars['detail']->value->nombre_p;?>
 </td> 
-                                <td class="border border-black"><?php echo $_smarty_tpl->tpl_vars['detail']->value->apellido;?>
+                                    <td class="border border-black"><?php echo $_smarty_tpl->tpl_vars['detail']->value->apellido;?>
 </td>
-                                <td class="border border-black"><?php echo $_smarty_tpl->tpl_vars['detail']->value->clase;?>
+                                    <td class="border border-black"><?php echo $_smarty_tpl->tpl_vars['detail']->value->clase;?>
 </td>
-                                <td class="border border-black"><?php echo $_smarty_tpl->tpl_vars['detail']->value->nombre_r;?>
+                                    <td class="border border-black"><?php echo $_smarty_tpl->tpl_vars['detail']->value->nombre_r;?>
 </td> 
-                            </tr>
-                        <?php
+                                </tr>
+                            <?php
 }
 $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?> 
-                    </tbody>
-                </table>
-            </div>
-        
-        <?php } else { ?>
-            <h2>No existe cargado personajes de esa raza</h2>
+                        </tbody>
+                    </table>
+                </div>
+            <?php } else { ?>
+                <h2 class='my-4 mt-4 ms-4'>No existe cargado personajes de esa raza</h2>
+            <?php }?>
         <?php }?>
     </div>
 </div>

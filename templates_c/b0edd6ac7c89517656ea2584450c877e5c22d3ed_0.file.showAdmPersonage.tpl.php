@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 4.2.1, created on 2022-10-02 21:59:47
+/* Smarty version 4.2.1, created on 2022-10-08 03:59:40
   from 'C:\xampp\htdocs\main\TPE-WEB2\templates\showAdmPersonage.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '4.2.1',
-  'unifunc' => 'content_6339edb3d934c9_32452077',
+  'unifunc' => 'content_6340d98c685298_71890033',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'b0edd6ac7c89517656ea2584450c877e5c22d3ed' => 
     array (
       0 => 'C:\\xampp\\htdocs\\main\\TPE-WEB2\\templates\\showAdmPersonage.tpl',
-      1 => 1664740784,
+      1 => 1665194375,
       2 => 'file',
     ),
   ),
@@ -23,7 +23,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:footer.tpl' => 1,
   ),
 ),false)) {
-function content_6339edb3d934c9_32452077 (Smarty_Internal_Template $_smarty_tpl) {
+function content_6340d98c685298_71890033 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_subTemplateRender("file:header.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
 ?>
     
@@ -47,7 +47,7 @@ $_smarty_tpl->tpl_vars['personage']->do_else = true;
 if ($_from !== null) foreach ($_from as $_smarty_tpl->tpl_vars['personage']->value) {
 $_smarty_tpl->tpl_vars['personage']->do_else = false;
 ?>
-            <tr>
+            <tr style="color:#C1DD94">
                 <td class = "border border-black fst-italic"><?php echo $_smarty_tpl->tpl_vars['personage']->value->nombre_p;?>
 </td> 
                 <td class = "border border-black fst-italic"><?php echo $_smarty_tpl->tpl_vars['personage']->value->apellido;?>

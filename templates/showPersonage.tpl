@@ -1,6 +1,6 @@
  {include file="header.tpl"}
     
-<h2>Lista de Personaje</h2>
+<h2 class='my-4'>Lista de Personaje</h2>
 <div class="table-responsive ">
 
     <table class="table container text-center border border-black">
@@ -16,12 +16,12 @@
         <tbody>
 
             {foreach $personages as $personage} 
-                <tr>
-                    <td class="border border-black">{$personage->nombre_p}</td> 
-                    <td class="border border-black">{$personage->apellido}</td>
-                    <td class="border border-black">{$personage->clase}</td>
-                    <td class="border border-black">{$personage->nombre_r}</td> 
-                    <td class="border border-black"><a href='public/personage/{$personage->id_personaje}' type='button' class='btn btn-primary ml-auto'>Detalle</a></td>
+                <tr style="color:#C1DD94">
+                    <td class="border border-black fst-italic">{$personage->nombre_p}</td> 
+                    <td class="border border-black fst-italic">{$personage->apellido}</td>
+                    <td class="border border-black fst-italic">{$personage->clase}</td>
+                    <td class="border border-black fst-italic">{$personage->nombre_r}</td> 
+                    <td class="border border-black fst-italic"><a href='public/personage/{$personage->id_personaje}' type='button' class='btn btn-primary ml-auto'>Detalle</a></td>
                 </tr>
             {/foreach} 
         </tbody>
@@ -29,7 +29,7 @@
 </div>
 
 {if $detail != null}
-    <h2>Detalle de Personaje</h2>
+    <h2 class='my-4'>Detalle de Personaje</h2>
     <li class='list-group-item d-flex justify-content-between align-items-center'>
         <span> Nombre: <b>{$detail[0]->nombre_p}</b> - Apellido: <b>{$detail[0]->apellido}</b> - Clase: <b>{$detail[0]->clase}</b> - Raza: <b>{$detail[0]->nombre_r}</b> - Faccion: <b>{$detail[0]->faccion}</b>  </span>
     </li>

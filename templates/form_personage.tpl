@@ -2,7 +2,7 @@
     
     {if isset($edit) } <h2>Editar Personaje</h2> {else} <h2>Agregar Personaje</h2>{/if}
     
-    <div class='row'>
+    <div class='row text-center'>
         <div class='col-3'>
             <div class='form-group'>
                 <label>Nombre</label>

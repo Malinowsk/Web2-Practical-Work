@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 4.2.1, created on 2022-10-02 05:22:46
+/* Smarty version 4.2.1, created on 2022-10-08 04:02:52
   from 'C:\xampp\htdocs\main\TPE-WEB2\templates\showConfirmDelete.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '4.2.1',
-  'unifunc' => 'content_633904068510b6_25550993',
+  'unifunc' => 'content_6340da4ccc00f2_84690388',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '993aa1556aa9a80747d122203466416d28a86f87' => 
     array (
       0 => 'C:\\xampp\\htdocs\\main\\TPE-WEB2\\templates\\showConfirmDelete.tpl',
-      1 => 1664680964,
+      1 => 1665194563,
       2 => 'file',
     ),
   ),
@@ -22,7 +22,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:footer.tpl' => 1,
   ),
 ),false)) {
-function content_633904068510b6_25550993 (Smarty_Internal_Template $_smarty_tpl) {
+function content_6340da4ccc00f2_84690388 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_subTemplateRender("file:header.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
 ?>
 
@@ -30,12 +30,12 @@ $_smarty_tpl->_subTemplateRender("file:header.tpl", $_smarty_tpl->cache_id, $_sm
 
     <div class="table-responsive ">
 
-        <table class="table container text-center">
-            <thead  class="table-dark">
+        <table class="table container text-center border border-black">
+            <thead class="table-dark border border-black">
                 <tr>
-                    <th scope="col">Nombre</th>
-                    <th scope="col">Apellido</th>
-                    <th scope="col">Clase</th>
+                    <th class="col-2 border border-black" scope="col">Nombre</th>
+                    <th class="col-2 border border-black" scope="col">Apellido</th>
+                    <th class="col-2 border border-black" scope="col">Clase</th>
                 </tr>
             </thead>
             <tbody>
@@ -46,12 +46,12 @@ $_smarty_tpl->tpl_vars['personage']->do_else = true;
 if ($_from !== null) foreach ($_from as $_smarty_tpl->tpl_vars['personage']->value) {
 $_smarty_tpl->tpl_vars['personage']->do_else = false;
 ?> 
-                    <tr>
-                        <td><?php echo $_smarty_tpl->tpl_vars['personage']->value->nombre_p;?>
+                    <tr style="color:#C1DD94">
+                        <td class = "border border-black fst-italic"><?php echo $_smarty_tpl->tpl_vars['personage']->value->nombre_p;?>
 </td> 
-                        <td><?php echo $_smarty_tpl->tpl_vars['personage']->value->apellido;?>
+                        <td class = "border border-black fst-italic"><?php echo $_smarty_tpl->tpl_vars['personage']->value->apellido;?>
 </td>
-                        <td><?php echo $_smarty_tpl->tpl_vars['personage']->value->clase;?>
+                        <td class = "border border-black fst-italic"><?php echo $_smarty_tpl->tpl_vars['personage']->value->clase;?>
 </td>
                     </tr>
                 <?php

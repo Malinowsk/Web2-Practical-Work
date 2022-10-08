@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 4.2.1, created on 2022-10-02 22:20:30
+/* Smarty version 4.2.1, created on 2022-10-08 03:59:41
   from 'C:\xampp\htdocs\main\TPE-WEB2\templates\showAdmRace.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '4.2.1',
-  'unifunc' => 'content_6339f28e0660e7_62320890',
+  'unifunc' => 'content_6340d98dcd3a13_35206996',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '9700aea2bd6990712e8a0addbf653480393e737b' => 
     array (
       0 => 'C:\\xampp\\htdocs\\main\\TPE-WEB2\\templates\\showAdmRace.tpl',
-      1 => 1664740955,
+      1 => 1665194373,
       2 => 'file',
     ),
   ),
@@ -23,7 +23,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:footer.tpl' => 1,
   ),
 ),false)) {
-function content_6339f28e0660e7_62320890 (Smarty_Internal_Template $_smarty_tpl) {
+function content_6340d98dcd3a13_35206996 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_subTemplateRender("file:header.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
 ?>
 
@@ -46,7 +46,7 @@ $_smarty_tpl->tpl_vars['race']->do_else = true;
 if ($_from !== null) foreach ($_from as $_smarty_tpl->tpl_vars['race']->value) {
 $_smarty_tpl->tpl_vars['race']->do_else = false;
 ?>
-            <tr>
+            <tr style="color:#C1DD94">
                 <td class = "border border-black fst-italic"><?php echo $_smarty_tpl->tpl_vars['race']->value->nombre;?>
 </td> 
                 <td class = "border border-black fst-italic"><?php echo $_smarty_tpl->tpl_vars['race']->value->faccion;?>

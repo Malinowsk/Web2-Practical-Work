@@ -7,29 +7,30 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="./css/style.css">
+    <link rel="icon" href="https://i.pinimg.com/originals/0f/05/2e/0f052e804604670ac46e613b85a99017.jpg">
     <title>Warcraft</title>
 </head>
-<body>
+<body style="background-color: #14454E ; color:#648C93">
     <header>
-        <nav class="navbar navbar-expand-lg bg-secondary">
+        <nav class="navbar navbar-expand-lg" style="background-color: #052D34">
             <div class="container-fluid">
-              <a class="navbar-brand" href="">Warcraft</a>
+              <a class="navbar-brand" style="color:white" href="">Warcraft</a>
               <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav">
-                  <li class="nav-item">
-                    <a class="nav-link" aria-current="page" href="public/personage">Personajes</a>
+                  <li class="nav-item ">
+                    <a class="nav-link text-decoration-underline" aria-current="page" style="color:white" href="public/personage">Personajes</a>
                   </li>
                   <li class="nav-item">
-                    <a class="nav-link" aria-current="page" href="public/race">Razas</a>
+                    <a class="nav-link text-decoration-underline" aria-current="page" style="color:white" href="public/race">Razas</a>
                   </li>
                   {if isset($smarty.session.USER_ID)}
                 
                     <li class="nav-item">
-                      <a class="nav-link" aria-current="page" href="admin/personage">Administrar Personajes</a>
+                      <a class="nav-link text-decoration-underline" aria-current="page" style="color:white" href="admin/personage">Administrar Personajes</a>
                     </li>
                     <li class="nav-item">
-                      <a class="nav-link" aria-current="page" href="admin/race"">Administrar Razas</a>
+                      <a class="nav-link text-decoration-underline" aria-current="page" style="color:white" href="admin/race">Administrar Razas</a>
                     </li>
                   
                   {/if}
@@ -39,11 +40,11 @@
            {* {if isset($loggedIn) and $loggedIn == true} *}
             {if isset($smarty.session.USER_ID)}
               <div>
-                <button type="button" class="btn btn-dark me-3"> <a href='public/logout' class="text-decoration-none text-while">Salir</a> </button>
+              <a href='public/logout' class="btn btn-dark text-decoration-none" style="margin-right: 10px; color: #0d6efd">Salir</a>
               </div>
             {else} 
-              <div>
-                <button class="btn btn-dark me-3"> <a href='public/login' class="text-decoration-none text-while">Iniciar sesión</a> </button>
+              <div style="width:150px">
+                <a href='public/login' class="btn btn-dark text-decoration-none" style="margin-right: 10px; color: #0d6efd">Iniciar sesión</a>
               </div>
             {/if}
         </nav>

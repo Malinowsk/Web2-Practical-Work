@@ -12,6 +12,7 @@ class GameView {
     function showHome(){
         //var_dump($loggedIn);
         $this->smarty->display('./templates/header.tpl');
+        $this->smarty->display('./templates/home.tpl');
         $this->smarty->display('./templates/footer.tpl');
     }
 
