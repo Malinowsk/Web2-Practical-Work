@@ -49,7 +49,8 @@ switch ($params[0]) {
                         $GameController->showRace($params[2]);
                     break;
                 default:
-                    echo('404 Page not found');
+                    $GameController = new GameController();
+                    $GameController->showDefault();
                     break;
             }
             break;
@@ -88,7 +89,8 @@ switch ($params[0]) {
                                 }
                                 break;
                             default:
-                                echo('404 Page not found');
+                                $GameController = new GameController();
+                                $GameController->showDefault();
                                 break;
                         }
                     }
@@ -127,18 +129,21 @@ switch ($params[0]) {
                                 }
                                 break;
                             default:
-                                echo('404 Page not found');
+                                $GameController = new GameController();
+                                $GameController->showDefault();
                                 break;
                         }
                     }
                     break;
                 default:
-                    echo('404 Page not found');
+                    $GameController = new GameController();
+                    $GameController->showDefault();
                     break;
             }
             break;
         }
     default:
-        echo('404 Page not found');
+        $GameController = new GameController();
+        $GameController->showDefault();
         break;
 }

@@ -145,4 +145,10 @@ class GameController {
 
         header("Location: " . BASE_URL . "admin/race"); 
     }
+
+    public function showDefault() {
+        $this->view->showDefault();
+    }
+    
+
 }

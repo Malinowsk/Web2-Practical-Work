@@ -34,7 +34,7 @@
 
             {if !empty($details)}
                 
-                <h2 class='my-4'>Lista de Personaje de la raza : {$details[0]->nombre_r}</h2>
+                <h2 class='my-4'>Personajes de la raza: {$details[0]->nombre_r}</h2>
 
                 <div class="table-responsive ">
 

@@ -62,4 +62,9 @@ class GameView {
         $this->smarty->display('./templates/showConfirmDelete.tpl');
     }
 
+    function showDefault() {
+        $this->smarty->display('./templates/default.tpl');
+    }
+    
+
 }

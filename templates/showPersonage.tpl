@@ -1,6 +1,6 @@
  {include file="header.tpl"}
     
-<h2 class='my-4'>Lista de Personaje</h2>
+<h2 class='my-4'>Lista de Personajes</h2>
 <div class="table-responsive ">
 
     <table class="table container text-center border border-black">
