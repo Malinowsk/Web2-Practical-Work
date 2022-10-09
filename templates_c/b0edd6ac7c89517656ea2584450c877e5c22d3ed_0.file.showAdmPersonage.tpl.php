@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 4.2.1, created on 2022-10-08 03:59:40
+/* Smarty version 4.2.1, created on 2022-10-09 19:45:17
   from 'C:\xampp\htdocs\main\TPE-WEB2\templates\showAdmPersonage.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '4.2.1',
-  'unifunc' => 'content_6340d98c685298_71890033',
+  'unifunc' => 'content_634308ade9b554_39878744',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'b0edd6ac7c89517656ea2584450c877e5c22d3ed' => 
     array (
       0 => 'C:\\xampp\\htdocs\\main\\TPE-WEB2\\templates\\showAdmPersonage.tpl',
-      1 => 1665194375,
+      1 => 1665336914,
       2 => 'file',
     ),
   ),
@@ -23,7 +23,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:footer.tpl' => 1,
   ),
 ),false)) {
-function content_6340d98c685298_71890033 (Smarty_Internal_Template $_smarty_tpl) {
+function content_634308ade9b554_39878744 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_subTemplateRender("file:header.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
 ?>
     
@@ -56,8 +56,8 @@ $_smarty_tpl->tpl_vars['personage']->do_else = false;
 </td> 
                 <td class = "border border-black fst-italic"><?php echo $_smarty_tpl->tpl_vars['personage']->value->nombre_r;?>
 </td>
-                <td class = "border border-black"><a href='admin/personage/edit/<?php echo $_smarty_tpl->tpl_vars['personage']->value->id_personaje;?>
-' type='button' class='btn btn-success ml-auto ms-3 me-3'>Editar</a><a href='admin/personage/delete/<?php echo $_smarty_tpl->tpl_vars['personage']->value->id_personaje;?>
+                <td class = "border border-black"><a href='admin-personages/edit/<?php echo $_smarty_tpl->tpl_vars['personage']->value->id_personaje;?>
+' type='button' class='btn btn-success ml-auto ms-3 me-3'>Editar</a><a href='admin-personages/delete/<?php echo $_smarty_tpl->tpl_vars['personage']->value->id_personaje;?>
 ' type='button' class='btn btn-danger ml-auto ms-3 me-3'>Borrar</a></td>
             </tr>
         <?php

@@ -19,7 +19,7 @@
                 <td class = "border border-black fst-italic">{$personage->apellido}</td>
                 <td class = "border border-black fst-italic">{$personage->clase}</td> 
                 <td class = "border border-black fst-italic">{$personage->nombre_r}</td>
-                <td class = "border border-black"><a href='admin/personage/edit/{$personage->id_personaje}' type='button' class='btn btn-success ml-auto ms-3 me-3'>Editar</a><a href='admin/personage/delete/{$personage->id_personaje}' type='button' class='btn btn-danger ml-auto ms-3 me-3'>Borrar</a></td>
+                <td class = "border border-black"><a href='admin-personages/edit/{$personage->id_personaje}' type='button' class='btn btn-success ml-auto ms-3 me-3'>Editar</a><a href='admin-personages/delete/{$personage->id_personaje}' type='button' class='btn btn-danger ml-auto ms-3 me-3'>Borrar</a></td>
             </tr>
         {/foreach} 
     </tbody>

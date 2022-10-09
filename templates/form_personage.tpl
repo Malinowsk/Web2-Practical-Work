@@ -1,4 +1,4 @@
-<form action= {if isset($edit) } "admin/personage/edit/confirm/{$edit[0]->id_personaje}" {else} "admin/personage/add" {/if} method='POST' class='my-4'>
+<form action= {if isset($edit) } "admin-personages/edit/confirm/{$edit[0]->id_personaje}" {else} "admin-personages/add" {/if} method='POST' class='my-4'>
     
     {if isset($edit) } <h2>Editar Personaje</h2> {else} <h2>Agregar Personaje</h2>{/if}
     
@@ -38,7 +38,7 @@
     
     <button type="submit" class="btn btn-warning mt-3">{if isset($edit) } Aplicar {else} Guardar {/if}</button>
     {if isset($edit) }
-        <button type="button" class="btn btn-warning mt-3 ms-3"> <a href='admin/personage' class="text-decoration-none text-dark">Cancelar</a> </button>
+        <button type="button" class="btn btn-warning mt-3 ms-3"> <a href='admin-personages' class="text-decoration-none text-dark">Cancelar</a> </button>
     {/if}
 
 </form>

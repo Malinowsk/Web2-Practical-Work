@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 4.2.1, created on 2022-10-08 04:11:59
+/* Smarty version 4.2.1, created on 2022-10-09 19:42:07
   from 'C:\xampp\htdocs\main\TPE-WEB2\templates\header.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '4.2.1',
-  'unifunc' => 'content_6340dc6f4ba858_60577424',
+  'unifunc' => 'content_634307ef1567e3_98963650',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '8875cb0829626c6385ae6f13b3f251bffc9e3cf2' => 
     array (
       0 => 'C:\\xampp\\htdocs\\main\\TPE-WEB2\\templates\\header.tpl',
-      1 => 1665195114,
+      1 => 1665336764,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_6340dc6f4ba858_60577424 (Smarty_Internal_Template $_smarty_tpl) {
+function content_634307ef1567e3_98963650 (Smarty_Internal_Template $_smarty_tpl) {
 ?><!DOCTYPE html>
 <html lang="en">
 <head>
@@ -43,18 +43,18 @@ function content_6340dc6f4ba858_60577424 (Smarty_Internal_Template $_smarty_tpl)
               <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav">
                   <li class="nav-item ">
-                    <a class="nav-link text-decoration-underline" aria-current="page" style="color:white" href="public/personage">Personajes</a>
+                    <a class="nav-link text-decoration-underline" aria-current="page" style="color:white" href="personages">Personajes</a>
                   </li>
                   <li class="nav-item">
-                    <a class="nav-link text-decoration-underline" aria-current="page" style="color:white" href="public/race">Razas</a>
+                    <a class="nav-link text-decoration-underline" aria-current="page" style="color:white" href="races">Razas</a>
                   </li>
                   <?php if ((isset($_SESSION['USER_ID']))) {?>
                 
                     <li class="nav-item">
-                      <a class="nav-link text-decoration-underline" aria-current="page" style="color:white" href="admin/personage">Administrar Personajes</a>
+                      <a class="nav-link text-decoration-underline" aria-current="page" style="color:white" href="admin-personages">Administrar Personajes</a>
                     </li>
                     <li class="nav-item">
-                      <a class="nav-link text-decoration-underline" aria-current="page" style="color:white" href="admin/race">Administrar Razas</a>
+                      <a class="nav-link text-decoration-underline" aria-current="page" style="color:white" href="admin-races">Administrar Razas</a>
                     </li>
                   
                   <?php }?>
@@ -63,11 +63,11 @@ function content_6340dc6f4ba858_60577424 (Smarty_Internal_Template $_smarty_tpl)
             </div>
                        <?php if ((isset($_SESSION['USER_ID']))) {?>
               <div>
-              <a href='public/logout' class="btn btn-dark text-decoration-none" style="margin-right: 10px; color: #0d6efd">Salir</a>
+              <a href='logout' class="btn btn-dark text-decoration-none" style="margin-right: 10px; color: #0d6efd">Salir</a>
               </div>
             <?php } else { ?> 
               <div style="width:150px">
-                <a href='public/login' class="btn btn-dark text-decoration-none" style="margin-right: 10px; color: #0d6efd">Iniciar sesión</a>
+                <a href='login' class="btn btn-dark text-decoration-none" style="margin-right: 10px; color: #0d6efd">Iniciar sesión</a>
               </div>
             <?php }?>
         </nav>

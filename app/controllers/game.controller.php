@@ -67,13 +67,13 @@ class GameController {
 
         $id = $this->personage_model->insert($name, $lastname, $class, $race);
 
-        header("Location: " . BASE_URL . "admin/personage"); 
+        header("Location: " . BASE_URL . "admin-personages"); 
     }
    
     public function deletePersonage($id) {
         $this->authHelper->checkLoggedIn();
         $this->personage_model->delete($id);
-        header("Location: " . BASE_URL . "admin/personage");
+        header("Location: " . BASE_URL . "admin-personages");
     }
 
     public function showAdmRace() {
@@ -90,7 +90,7 @@ class GameController {
 
         $id = $this->race_model->insert($name, $faccion);
 
-        header("Location: " . BASE_URL . "admin/race"); 
+        header("Location: " . BASE_URL . "admin-races"); 
     }
 
     public function deleteRace($id) {
@@ -107,7 +107,7 @@ class GameController {
     public function delete($id) {
         $this->authHelper->checkLoggedIn();
         $this->race_model->delete($id);
-        header("Location: " . BASE_URL . "admin/race");
+        header("Location: " . BASE_URL . "admin-races");
     }
     
     public function preEditPersonage($id) {
@@ -126,7 +126,7 @@ class GameController {
 
         $idw = $this->personage_model->update($name, $lastname, $class, $race, $id);
 
-        header("Location: " . BASE_URL . "admin/personage"); 
+        header("Location: " . BASE_URL . "admin-personages"); 
     }
 
     public function preEditRace($id) {
@@ -143,7 +143,7 @@ class GameController {
         
         $idw = $this->race_model->update($name, $faccion, $id);
 
-        header("Location: " . BASE_URL . "admin/race"); 
+        header("Location: " . BASE_URL . "admin-races"); 
     }
 
     public function showDefault() {

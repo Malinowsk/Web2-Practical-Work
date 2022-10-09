@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 4.2.1, created on 2022-10-08 19:58:39
+/* Smarty version 4.2.1, created on 2022-10-09 19:42:21
   from 'C:\xampp\htdocs\main\TPE-WEB2\templates\showPersonage.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '4.2.1',
-  'unifunc' => 'content_6341ba4fd9f648_14117387',
+  'unifunc' => 'content_634307fdc271e0_61689273',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'b94baf02068355abe0bdae01eb2cf02165b85f72' => 
     array (
       0 => 'C:\\xampp\\htdocs\\main\\TPE-WEB2\\templates\\showPersonage.tpl',
-      1 => 1665251917,
+      1 => 1665337118,
       2 => 'file',
     ),
   ),
@@ -22,7 +22,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:footer.tpl' => 1,
   ),
 ),false)) {
-function content_6341ba4fd9f648_14117387 (Smarty_Internal_Template $_smarty_tpl) {
+function content_634307fdc271e0_61689273 (Smarty_Internal_Template $_smarty_tpl) {
 ?> <?php $_smarty_tpl->_subTemplateRender("file:header.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
 ?>
     
@@ -56,7 +56,7 @@ $_smarty_tpl->tpl_vars['personage']->do_else = false;
 </td>
                     <td class="border border-black fst-italic"><?php echo $_smarty_tpl->tpl_vars['personage']->value->nombre_r;?>
 </td> 
-                    <td class="border border-black fst-italic"><a href='public/personage/<?php echo $_smarty_tpl->tpl_vars['personage']->value->id_personaje;?>
+                    <td class="border border-black fst-italic"><a href='personages/<?php echo $_smarty_tpl->tpl_vars['personage']->value->id_personaje;?>
 ' type='button' class='btn btn-primary ml-auto'>Detalle</a></td>
                 </tr>
             <?php

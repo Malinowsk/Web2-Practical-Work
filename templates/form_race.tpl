@@ -1,6 +1,6 @@
 
 <!-- formulario de alta de tarea -->
-<form action= {if isset($edit) } "admin/race/edit/confirm/{$edit[0]->id_raza}" {else} "admin/race/add" {/if} method="POST" class="my-4">
+<form action= {if isset($edit) } "admin-races/edit/confirm/{$edit[0]->id_raza}" {else} "admin-races/add" {/if} method="POST" class="my-4">
     
     {if isset($edit) } <h2>Editar Raza</h2> {else} <h2>Agregar Raza</h2> {/if}
         
@@ -24,7 +24,7 @@
     <button type="submit" class="btn btn-warning mt-3">{if isset($edit) } Aplicar {else} Guardar {/if}</button>
     
     {if isset($edit) }
-        <button type="button" class="btn btn-warning mt-3 ms-3"> <a href='admin/race' class="text-decoration-none text-dark">Cancelar</a> </button>
+        <button type="button" class="btn btn-warning mt-3 ms-3"> <a href='admin-races' class="text-decoration-none text-dark">Cancelar</a> </button>
     {/if}
 
 </form>

@@ -21,7 +21,7 @@
                     <td class="border border-black fst-italic">{$personage->apellido}</td>
                     <td class="border border-black fst-italic">{$personage->clase}</td>
                     <td class="border border-black fst-italic">{$personage->nombre_r}</td> 
-                    <td class="border border-black fst-italic"><a href='public/personage/{$personage->id_personaje}' type='button' class='btn btn-primary ml-auto'>Detalle</a></td>
+                    <td class="border border-black fst-italic"><a href='personages/{$personage->id_personaje}' type='button' class='btn btn-primary ml-auto'>Detalle</a></td>
                 </tr>
             {/foreach} 
         </tbody>

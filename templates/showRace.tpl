@@ -21,7 +21,7 @@
                         <tr class="border border-black" style="color:#C1DD94">
                             <td class="border border-black fst-italic">{$race->nombre}</td> 
                             <td class="border border-black fst-italic">{$race->faccion}</td>
-                            <td class="border border-black fst-italic"><a href='public/race/{$race->id_raza}' type='button' class='btn btn-primary ml-auto'>Detalle</a></td>
+                            <td class="border border-black fst-italic"><a href='races/{$race->id_raza}' type='button' class='btn btn-primary ml-auto'>Detalle</a></td>
                         </tr>
                     {/foreach} 
                 </tbody>

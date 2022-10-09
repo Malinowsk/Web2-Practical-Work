@@ -16,7 +16,7 @@
             <tr style="color:#C1DD94">
                 <td class = "border border-black fst-italic">{$race->nombre}</td> 
                 <td class = "border border-black fst-italic">{$race->faccion}</td>
-                <td class = "border border-black"><a href='admin/race/edit/{$race->id_raza}' type='button' class='btn btn-success ml-auto ms-3 me-3'>Editar</a><a href='admin/race/delete/{$race->id_raza}' type='button' class='btn btn-danger ml-auto ms-3 me-3'>Borrar</a></td>
+                <td class = "border border-black"><a href='admin-races/edit/{$race->id_raza}' type='button' class='btn btn-success ml-auto ms-3 me-3'>Editar</a><a href='admin-races/delete/{$race->id_raza}' type='button' class='btn btn-danger ml-auto ms-3 me-3'>Borrar</a></td>
             </tr>
         {/foreach} 
     </tbody>

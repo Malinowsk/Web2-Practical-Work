@@ -5,7 +5,7 @@
                 <div class="card bg-dark text-white" style="border-radius: 1rem;">
                     <div class="card-body p-5 text-center">
 
-                        <form action="public/validate" method="POST" class="mb-md-5 mt-md-4">
+                        <form action="validate" method="POST" class="mb-md-5 mt-md-4">
 
                             <h2 class="fw-bold mb-2 text-uppercase">Iniciar sesión</h2>
                             <p class="text-white-50 mb-5">¡Por favor, introduce tu email y contraseña!</p>

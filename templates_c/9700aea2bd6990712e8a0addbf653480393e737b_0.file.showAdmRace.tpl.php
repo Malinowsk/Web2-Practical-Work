@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 4.2.1, created on 2022-10-08 03:59:41
+/* Smarty version 4.2.1, created on 2022-10-09 19:54:02
   from 'C:\xampp\htdocs\main\TPE-WEB2\templates\showAdmRace.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '4.2.1',
-  'unifunc' => 'content_6340d98dcd3a13_35206996',
+  'unifunc' => 'content_63430aba6f92e8_34935574',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '9700aea2bd6990712e8a0addbf653480393e737b' => 
     array (
       0 => 'C:\\xampp\\htdocs\\main\\TPE-WEB2\\templates\\showAdmRace.tpl',
-      1 => 1665194373,
+      1 => 1665336960,
       2 => 'file',
     ),
   ),
@@ -23,7 +23,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:footer.tpl' => 1,
   ),
 ),false)) {
-function content_6340d98dcd3a13_35206996 (Smarty_Internal_Template $_smarty_tpl) {
+function content_63430aba6f92e8_34935574 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_subTemplateRender("file:header.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
 ?>
 
@@ -51,8 +51,8 @@ $_smarty_tpl->tpl_vars['race']->do_else = false;
 </td> 
                 <td class = "border border-black fst-italic"><?php echo $_smarty_tpl->tpl_vars['race']->value->faccion;?>
 </td>
-                <td class = "border border-black"><a href='admin/race/edit/<?php echo $_smarty_tpl->tpl_vars['race']->value->id_raza;?>
-' type='button' class='btn btn-success ml-auto ms-3 me-3'>Editar</a><a href='admin/race/delete/<?php echo $_smarty_tpl->tpl_vars['race']->value->id_raza;?>
+                <td class = "border border-black"><a href='admin-races/edit/<?php echo $_smarty_tpl->tpl_vars['race']->value->id_raza;?>
+' type='button' class='btn btn-success ml-auto ms-3 me-3'>Editar</a><a href='admin-races/delete/<?php echo $_smarty_tpl->tpl_vars['race']->value->id_raza;?>
 ' type='button' class='btn btn-danger ml-auto ms-3 me-3'>Borrar</a></td>
             </tr>
         <?php

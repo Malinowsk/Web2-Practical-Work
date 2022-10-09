@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 4.2.1, created on 2022-10-08 04:02:52
+/* Smarty version 4.2.1, created on 2022-10-09 19:56:47
   from 'C:\xampp\htdocs\main\TPE-WEB2\templates\showConfirmDelete.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '4.2.1',
-  'unifunc' => 'content_6340da4ccc00f2_84690388',
+  'unifunc' => 'content_63430b5f600003_54806108',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '993aa1556aa9a80747d122203466416d28a86f87' => 
     array (
       0 => 'C:\\xampp\\htdocs\\main\\TPE-WEB2\\templates\\showConfirmDelete.tpl',
-      1 => 1665194563,
+      1 => 1665337024,
       2 => 'file',
     ),
   ),
@@ -22,7 +22,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:footer.tpl' => 1,
   ),
 ),false)) {
-function content_6340da4ccc00f2_84690388 (Smarty_Internal_Template $_smarty_tpl) {
+function content_63430b5f600003_54806108 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_subTemplateRender("file:header.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
 ?>
 
@@ -64,10 +64,10 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
     <h3>Estos personajes pertenecen a la tipo de raza que desea borrar, si confirma la accion todos los personajes se borran junto con la raza. </h3>
 
     <div>
-    <a href='admin/race/delete/confirm/<?php echo $_smarty_tpl->tpl_vars['personage']->value->id_raza;?>
+    <a href='admin-races/delete/confirm/<?php echo $_smarty_tpl->tpl_vars['personage']->value->id_raza;?>
 ' type='button' class='btn btn-danger ml-auto ms-3 me-3'>Confirmar</a>
 
-    <a href='admin/race' type='button' class='btn btn-primary ml-auto ms-3 me-3'>Cancelar</a>
+    <a href='admin-races' type='button' class='btn btn-primary ml-auto ms-3 me-3'>Cancelar</a>
     </div>
 
 </div>

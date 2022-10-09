@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 4.2.1, created on 2022-10-08 20:01:26
+/* Smarty version 4.2.1, created on 2022-10-09 19:42:29
   from 'C:\xampp\htdocs\main\TPE-WEB2\templates\showRace.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '4.2.1',
-  'unifunc' => 'content_6341baf6b5f9e0_31267995',
+  'unifunc' => 'content_63430805df5193_29254334',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '6319da744167c2c231da5d0b6c711b3c2f2ea490' => 
     array (
       0 => 'C:\\xampp\\htdocs\\main\\TPE-WEB2\\templates\\showRace.tpl',
-      1 => 1665252066,
+      1 => 1665337163,
       2 => 'file',
     ),
   ),
@@ -22,7 +22,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:footer.tpl' => 1,
   ),
 ),false)) {
-function content_6341baf6b5f9e0_31267995 (Smarty_Internal_Template $_smarty_tpl) {
+function content_63430805df5193_29254334 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_subTemplateRender("file:header.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
 ?> 
      
@@ -54,7 +54,7 @@ $_smarty_tpl->tpl_vars['race']->do_else = false;
 </td> 
                             <td class="border border-black fst-italic"><?php echo $_smarty_tpl->tpl_vars['race']->value->faccion;?>
 </td>
-                            <td class="border border-black fst-italic"><a href='public/race/<?php echo $_smarty_tpl->tpl_vars['race']->value->id_raza;?>
+                            <td class="border border-black fst-italic"><a href='races/<?php echo $_smarty_tpl->tpl_vars['race']->value->id_raza;?>
 ' type='button' class='btn btn-primary ml-auto'>Detalle</a></td>
                         </tr>
                     <?php
