@@ -18,7 +18,8 @@ switch ($params[0]) {
         if(empty($params[1])){
             $GameController = new GameController();
             $GameController->ShowHome();
-            break;}
+            break;
+        }
     case 'login':
         $SessionController = new SessionController();
         $SessionController->showLogin();

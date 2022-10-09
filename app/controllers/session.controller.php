@@ -11,7 +11,6 @@ class SessionController {
         $this->user_model = new UserModel();
         $this->session_view = new SessionView();
         $this->authHelper = new AuthHelper();
-        //$loggedIn = $this->authHelper->getLoggedIn();
     }
 
     public function showLogin() {
