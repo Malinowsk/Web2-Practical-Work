@@ -29,7 +29,7 @@
                 <label>Raza</label>
                 <select name='race' class='form-control'>
                     {foreach $races as $race} 
-                        <option value="{$race->id_raza}">{$race->nombre}</option>
+                        <option value="{$race->id_raza}" {if {$race->id_raza} == {$edit[0]->id_raza} }selected{/if}>{$race->nombre} </option>
                     {/foreach} 
                 </select>
             </div>
