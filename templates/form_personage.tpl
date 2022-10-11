@@ -1,4 +1,4 @@
-<form action= {if isset($edit) } "admin-personages/edit/confirm/{$edit[0]->id_personaje}" {else} "admin-personages/add" {/if} method='POST' class='my-4'>
+<form action= {if isset($edit) } "admin-personages/edit-confirm/{$edit[0]->id_personaje}" {else} "admin-personages/add" {/if} method='POST' class='my-4'>
     
     {if isset($edit) } <h2>Editar Personaje</h2> {else} <h2>Agregar Personaje</h2>{/if}
     

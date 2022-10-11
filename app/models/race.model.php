@@ -33,6 +33,7 @@ class RaceModel {
     public function delete($id) {
         $query = $this->db->prepare('DELETE FROM Raza WHERE id_raza = ?');
         $query->execute([$id]);
+        return $query->rowCount();
     }
 
     public function update($name, $faccion, $id) {

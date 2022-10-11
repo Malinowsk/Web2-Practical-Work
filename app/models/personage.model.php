@@ -87,6 +87,8 @@ class PersonageModel {
     function delete($id) {
         $query = $this->db->prepare('DELETE FROM Personaje WHERE id_personaje = ?');
         $query->execute([$id]);
+        
+        return $query->rowCount();
     }
     
     public function update($name, $lastname, $class, $race, $id) {

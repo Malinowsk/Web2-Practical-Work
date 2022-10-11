@@ -15,4 +15,8 @@ class SessionView {
         $this->smarty->display('./templates/showLogin.tpl');
     }
 
+    function showDefault() {
+        $this->smarty->display('./templates/default.tpl');
+    }
+
 }

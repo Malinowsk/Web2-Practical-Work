@@ -15,36 +15,52 @@ $params = explode('/', $action);
 // tabla de ruteo
 switch ($params[0]) {
     case 'home':
-        if(empty($params[1])){
-            $GameController = new GameController();
+        $GameController = new GameController();
+        if(empty($params[1]))
             $GameController->ShowHome();
-            break;
-        }
+        else
+            $GameController->showDefault();
+        break;
     case 'login':
         $SessionController = new SessionController();
-        $SessionController->showLogin();
+        if(empty($params[1]))
+            $SessionController->showLogin();
+        else
+            $SessionController->showDefault();
         break;
     case 'validate':
         $SessionController = new SessionController();
-        $SessionController->validateUser();
+        if(empty($params[1]))
+            $SessionController->validateUser();
+        else
+            $SessionController->showDefault();
         break;
     case 'logout':
         $SessionController = new SessionController();
-        $SessionController->logout();
+        if(empty($params[1]))
+            $SessionController->logout();
+        else
+            $SessionController->showDefault();
         break;
     case 'personages':
         $GameController = new GameController();
         if (empty($params[1]))
             $GameController->showPersonage();
         else
-            $GameController->showPersonage($params[1]);
+            if(empty($params[2]))
+                $GameController->showPersonage($params[1]);
+            else
+                $GameController->showDefault();
         break;
     case 'races':
         $GameController = new GameController();
         if (empty($params[1]))
             $GameController->showRace();
         else
-            $GameController->showRace($params[1]);
+            if(empty($params[2]))
+                $GameController->showRace($params[1]);
+            else
+                $GameController->showDefault();
         break;
     case 'admin-personages':
         $GameController = new GameController();
@@ -52,24 +68,39 @@ switch ($params[0]) {
             $GameController->showAdmPersonage();
         }else{   
             switch ($params[1]){
+                
                 case 'add':
-                    $GameController->addPersonage();
+                    if(empty($params[2]))
+                        $GameController->addPersonage();
+                    else
+                        $GameController->showDefault();
                     break;
+
                 case 'delete':
-                    $id = $params[2];
-                    $GameController->deletePersonage($id);
-                    break;
-                case 'edit':
                     if(!empty($params[2])){
-                        if($params[2] == 'confirm'){
-                            $id = $params[3];
-                            $GameController->editPersonage($id);
-                        }
-                        else{
-                            $id = $params[2];
-                            $GameController->preEditPersonage($id);
-                        }
+                        $id = $params[2];
+                        $GameController->deletePersonage($id);
                     }
+                    else
+                        $GameController->showDefault();
+                    break;
+
+                case 'edit':
+                    if(empty($params[2]) or !empty($params[3]))
+                        $GameController->showDefault();
+                    else
+                        $GameController->preEditPersonage($params[2]);
+                    break;
+
+                case 'edit-confirm':
+                    if(empty($params[2]) or !empty($params[3]))
+                        $GameController->showDefault();
+                    else
+                        $GameController->editPersonage($params[2]);
+                    break;
+
+                default:
+                    $GameController->showDefault();
                     break;
             }
         }
@@ -81,37 +112,48 @@ switch ($params[0]) {
             $GameController->showAdmRace();
         }else{   
             switch ($params[1]){
+                
                 case 'add':
-                    $GameController->addRace();
+                    if(empty($params[2]))
+                        $GameController->addRace();
+                    else
+                        $GameController->showDefault();
                     break;
+
                 case 'delete':
-                    if(!empty($params[2])){
-                        if($params[2] == 'confirm'){
-                            $id = $params[3];
-                            $GameController->delete($id);
-                        }
-                        else{
-                            $id = $params[2];
-                            $GameController->deleteRace($id);
-                        }
-                    }
+                    if(empty($params[2]) or !empty($params[3]))
+                        $GameController->showDefault();
+                    else
+                        $GameController->deleteRace($params[2]);
                     break;
+
+                case 'delete-confirm':
+                    if(empty($params[2]) or !empty($params[3]))
+                        $GameController->showDefault();
+                    else
+                        $GameController->delete($params[2]);
+                    break;
+
                 case 'edit':
-                    if(!empty($params[2])){
-                        if($params[2] == 'confirm'){
-                            $id = $params[3];
-                            $GameController->editRace($id);
-                        }
-                        else{
-                            $id = $params[2];
-                            $GameController->preEditRace($id);
-                        }
-                    }
+                    if(empty($params[2]) or !empty($params[3]))
+                        $GameController->showDefault();
+                    else
+                        $GameController->preEditRace($params[2]);
+                    break;
+
+                case 'edit-confirm':
+                    if(empty($params[2]) or !empty($params[3]))
+                        $GameController->showDefault();
+                    else
+                        $GameController->editRace($params[2]);
+                    break;
+
+                default:
+                    $GameController->showDefault();
                     break;
             }
         }
         break;
-
     default:
         $GameController = new GameController();
         $GameController->showDefault();

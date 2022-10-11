@@ -17,16 +17,16 @@ class SessionController {
         if (!($this->authHelper->getLoggedIn()))
             $this->session_view->showLogin();
         else
-            echo "error 404";
+            $this->session_view->showDefault(); // el usiario se encuentra ya logeado
     }
 
     public function validateUser() {
 
         if (($this->authHelper->getLoggedIn())){
-            echo "usuario ya se encuenta logeado";
+            $this->session_view->showDefault(); // el usiario se encuentra ya logeado
             die();
         }
-
+        
         // toma los datos del form
         if (isset($_POST['email']) && isset($_POST['password']) ) {
             $email = $_POST['email'];
@@ -47,11 +47,11 @@ class SessionController {
                 header("Location: " . BASE_URL);
             } else {
                 // si los datos son incorrectos muestro el form con un erro
-                $this->session_view->showLogin("El usuario o la contraseña no existe.");
+                $this->session_view->showLogin("El email o la contraseña no existe.");
             } 
         }
         else{
-            echo "acceso denegado";
+            $this->session_view->showDefault(); // acceso retringido - sin usar el form intenta acceder por url 
         }
     }
 
@@ -60,5 +60,10 @@ class SessionController {
         session_destroy();
         header("Location: " . BASE_URL);
     }
+
+    public function showDefault() {
+        $this->session_view->showDefault();
+    }
+    
 
 }

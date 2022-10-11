@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 02-10-2022 a las 05:46:32
+-- Tiempo de generación: 11-10-2022 a las 05:18:53
 -- Versión del servidor: 10.4.24-MariaDB
 -- Versión de PHP: 8.1.6
 
@@ -44,7 +44,9 @@ INSERT INTO `personaje` (`id_personaje`, `nombre`, `apellido`, `clase`, `id_raza
 (2, 'Modimus', 'Anvilmar', 'Mago', 1),
 (3, 'Thrall', 'Goel', 'Chamán', 2),
 (4, 'Grom', 'Hellscream', 'Guerrero', 2),
-(5, 'Arthas', 'Menethil', 'Paladin', 4);
+(5, 'Arthas', 'Menethil', 'Paladin', 4),
+(13, 'Sylvanas', 'Windrunner', 'Forestal Oscura', 3),
+(14, 'Cairne', 'Bloodhoof', 'Cazador', 7);
 
 -- --------------------------------------------------------
 
@@ -70,7 +72,7 @@ INSERT INTO `raza` (`id_raza`, `nombre`, `faccion`) VALUES
 (5, 'Troll', 'Horda'),
 (6, 'Elfo', 'Alianza'),
 (7, 'Tauren', 'Horda'),
-(8, 'Drainer', 'Alianza');
+(18, 'Draenei', 'Alianza');
 
 -- --------------------------------------------------------
 
@@ -81,15 +83,15 @@ INSERT INTO `raza` (`id_raza`, `nombre`, `faccion`) VALUES
 CREATE TABLE `usuario` (
   `id_usuario` int(11) NOT NULL,
   `email` varchar(40) NOT NULL,
-  `passwork` varchar(40) NOT NULL
+  `password` varchar(400) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Volcado de datos para la tabla `usuario`
 --
 
-INSERT INTO `usuario` (`id_usuario`, `email`, `passwork`) VALUES
-(1, 'juanrago@gmail.com', '1234');
+INSERT INTO `usuario` (`id_usuario`, `email`, `password`) VALUES
+(1, 'juanrago2015@gmail.com', '$2a$12$abq.hBiERSeDZWBurvpsT.yTNBxDhCH1YdK/lWllQS2LrgBXBAYBa');
 
 --
 -- Índices para tablas volcadas
@@ -122,13 +124,13 @@ ALTER TABLE `usuario`
 -- AUTO_INCREMENT de la tabla `personaje`
 --
 ALTER TABLE `personaje`
-  MODIFY `id_personaje` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `id_personaje` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=29;
 
 --
 -- AUTO_INCREMENT de la tabla `raza`
 --
 ALTER TABLE `raza`
-  MODIFY `id_raza` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+  MODIFY `id_raza` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=24;
 
 --
 -- AUTO_INCREMENT de la tabla `usuario`
