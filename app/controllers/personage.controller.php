@@ -1,10 +1,10 @@
 <?php
 require_once './app/models/personage.model.php';
 require_once './app/models/race.model.php';
-require_once './app/views/game.view.php';
+require_once './app/views/personage.view.php';
 require_once './app/helpers/auth.helper.php';
 
-class GameController {
+class PersonageController {
     private $personage_model;
     private $race_model;
     private $view;
@@ -13,7 +13,7 @@ class GameController {
     public function __construct() {
         $this->personage_model = new PersonageModel();
         $this->race_model = new RaceModel();
-        $this->view = new GameView();
+        $this->view = new PersonageView();
         $this->authHelper = new AuthHelper();
 
     }
